@@ -1,19 +1,30 @@
 #!/bin/bash
-# run_rt_modified.sh
-# Run "rt {file}.py" for each recently modified Python file
+# update.sh
+# Run ritobin_cli.exe on modified .py files, then git add+commit with message.
 
-# 1. Find modified *.py files according to Git
-files=$(git ls-files -m "*.py")
+# 1. Grab commit message from arguments
+commit_msg="$*"
 
-# 2. If none, exit
-if [ -z "$files" ]; then
-    echo "No modified Python files."
-    exit 0
+if [ -z "$commit_msg" ]; then
+    echo "❌ Error: No commit message provided."
+    echo "Usage: up Commit message here"
+    exit 1
 fi
 
-# 3. Loop and run rt
-for f in $files; do
-    echo "Running rt on $f..."
-    /mnt/d/csLol/Tools/ritobin/bin/ritobin_cli.exe "$f"
-done
+# 2. Find modified .py files
+files=$(git ls-files -m "*.py")
+
+# 3. Run ritobin_cli.exe on them if any
+if [ -n "$files" ]; then
+    for f in $files; do
+        echo "Running ritobin_cli.exe on $f..."
+        /mnt/d/csLol/Tools/ritobin/bin/ritobin_cli.exe "$f"
+    done
+else
+    echo "No modified Python files to process."
+fi
+
+# 4. Add all changes (including untracked) and commit
+git add -A
+git commit -m "$commit_msg"
 
