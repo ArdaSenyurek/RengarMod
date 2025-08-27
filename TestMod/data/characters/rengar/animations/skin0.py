@@ -133,11 +133,18 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell1.anm"
                 }
             }
-            "Spell2" = ConditionBoolClipData {
-                Updater: pointer = IsMovingParametricUpdater {}
-                mChangeAnimationMidPlay: bool = true
-                mTrueConditionClipName: hash = "Spell2_Run"
-                mFalseConditionClipName: hash = "Spell2_Idle"
+            "Spell2" =  AtomicClipData {
+                mTrackDataName: hash = "UpperBody"
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
+                }
+                mEventDataMap: map[hash,pointer] = {
+                    0x26a07077 = ConformToPathEventData {
+                        mMaskDataName: hash = 0x26a07077
+                        mBlendInTime: f32 = 0.1
+                        mBlendOutTime: f32 = 0.2
+                    }
+                }
             }
             "Spell3" = AtomicClipData {
                 mTrackDataName: hash = "Default"
@@ -361,19 +368,6 @@ entries: map[hash,embed] = {
                 mTrackDataName: hash = "Default"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
-                }
-            }
-            "Spell2_Run" = AtomicClipData {
-                mTrackDataName: hash = "Default"
-                mEventDataMap: map[hash,pointer] = {
-                    0x26a07077 = ConformToPathEventData {
-                        mMaskDataName: hash = 0x26a07077
-                        mBlendInTime: f32 = 0.1
-                        mBlendOutTime: f32 = 0.2
-                    }
-                }
-                mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2_run.anm"
                 }
             }
             "Spell4_Idle" = AtomicClipData {
@@ -633,6 +627,90 @@ entries: map[hash,embed] = {
                     0
                     0
                     0
+                    0
+                }
+            }
+            "UpperBody" = MaskData {
+                mWeightList: list[f32] = {
+                    0
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    1
+                    1
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    1
+                    0
+                    0
+                    1
+                    1
+                    1
+                    0
+                    1
+                    1
                     0
                 }
             }
