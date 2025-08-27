@@ -135,16 +135,17 @@ entries: map[hash,embed] = {
             }
             "Spell2" =  AtomicClipData {
                 mTrackDataName: hash = "UpperBody"
+                mMaskDataName: hash = "WTrack"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
                 }
-                mEventDataMap: map[hash,pointer] = {
-                    0x26a07077 = ConformToPathEventData {
-                        mMaskDataName: hash = 0x26a07077
-                        mBlendInTime: f32 = 0.1
-                        mBlendOutTime: f32 = 0.2
-                    }
-                }
+                # mEventDataMap: map[hash,pointer] = {
+                    # 0x26a07077 = ConformToPathEventData {
+                        # mMaskDataName: hash = 0x26a07077
+                        # mBlendInTime: f32 = 0.1
+                        # mBlendOutTime: f32 = 0.2
+                    # }
+                # }
             }
             "Spell3" = AtomicClipData {
                 mTrackDataName: hash = "Default"
@@ -721,10 +722,13 @@ entries: map[hash,embed] = {
                 mPriority: u8 = 2
             }
             "Default" = TrackData {
-                mPriority: u8 = 3
+                mPriority: u8 = 4
             }
             "HoodOnTrack" = TrackData {
                 mPriority: u8 = 1
+            }
+            "WTrack" = TrackData { #Placed above the Default track s.t only bones masked with upoerBody is affected from Spell2. 
+                mPriority: u8 = 3
             }
         }
         mBlendDataTable: map[u64,pointer] = {
