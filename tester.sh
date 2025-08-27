@@ -4,15 +4,16 @@
 #   ./p.sh -isAn SpellName
 #   ./p.sh -isMo
 #   ./p.sh -hasBuf BuffName
+#   ./p.sh -flush
 
 TEMPLATE="/mnt/d/csLol/Mods/BinTests/Gitted/TestMod/data/characters/rengar/skins/skin0_temp.py"
 OUTFILE="/mnt/d/csLol/Mods/BinTests/Gitted/TestMod/data/characters/rengar/skins/skin0.py"
 
 FLAG=$1
-ARG=$2   # For spell/buff names
+ARG=$2   # spell name or buff name
 
 if [ -z "$FLAG" ]; then
-    echo "Usage: $0 {-isAt|-isAn <Spell>|-isMo|-hasBuf <Buff>}"
+    echo "Usage: $0 {-isAt|-isAn <Spell>|-isMo|-hasBuf <Buff>|-flush}"
     exit 1
 fi
 
@@ -51,13 +52,40 @@ case $FLAG in
 "                        }")
         ;;
 
+    -flush)
+        # Flush = copy template, but drop entire PersistentEffectConditions scope
+        awk '
+        BEGIN { skip=0; depth=0 }
+        /PersistentEffectConditions: list2\[pointer\] = {/ {
+            skip=1; depth=0
+        }
+        {
+            if (skip) {
+                # count braces to know when block ends
+                for (i=1; i<=length($0); i++) {
+                    c=substr($0,i,1)
+                    if (c=="{") depth++
+                    else if (c=="}") {
+                        depth--
+                        if (depth==0) { skip=0; next }
+                    }
+                }
+                next
+            }
+        }
+        !skip { print }
+        ' "$TEMPLATE" > "$OUTFILE"
+        echo "✅ Flushed: PersistentEffectConditions removed using $TEMPLATE → $OUTFILE"
+        exit 0
+        ;;
+
     *)
         echo "Unknown flag: $FLAG"
         exit 1
         ;;
 esac
 
-# Always regenerate output from template
+# For insertions: always regenerate from template
 sed "/mDrivers: list\[pointer\] = {/r /dev/stdin" "$TEMPLATE" <<<"$INSERT" > "$OUTFILE"
 
 echo "✅ Regenerated $OUTFILE with $FLAG ($ARG)"
