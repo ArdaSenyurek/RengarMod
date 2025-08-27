@@ -157,11 +157,7 @@ entries: map[hash,embed] = {
             PersistentEffectConditionData {
                 OwnerCondition: pointer = OneTrueMaterialDriver {
                     mDrivers: list[pointer] = {
-                        IsAnimationPlayingDynamicMaterialBoolDriver {
-                            mAnimationNames: list[hash] = {
-                                "ahaha"
-                            }
-                        }
+                        IsMovingBoolDriver {}
                     
                     }
                 }                 
