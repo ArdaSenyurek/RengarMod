@@ -327,7 +327,7 @@ entries: map[hash,embed] = {
             }
             0x0fb24234 = AtomicClipData {
                 mMaskDataName: hash = "empty"
-                mTrackDataName: hash = "dummy"
+                mTrackDataName: hash = "HoodOnTrack"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Skin02/Rengar_skin02_hood_on.anm"
                 }
@@ -723,7 +723,7 @@ entries: map[hash,embed] = {
             "Default" = TrackData {
                 mPriority: u8 = 3
             }
-            "dummy" = TrackData {
+            "HoodOnTrack" = TrackData {
                 mPriority: u8 = 1
             }
         }
