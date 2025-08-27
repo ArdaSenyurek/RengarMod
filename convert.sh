@@ -1,6 +1,6 @@
 #!/bin/bash
 # convert.sh
-# Convert all modified Python files with ritobin_cli.exe
+# Convert all modified Python files with ritobin_cli.exe, handle errors gracefully
 
 # Find modified tracked .py files
 files=$(git ls-files -m "*.py")
@@ -10,10 +10,24 @@ if [ -z "$files" ]; then
     exit 0
 fi
 
+errors=0
+
 for f in $files; do
     echo "🔄 Converting $f with ritobin_cli.exe..."
     /mnt/d/csLol/Tools/ritobin/bin/ritobin_cli.exe "$f"
+    status=$?
+    if [ $status -ne 0 ]; then
+        echo "❌ Error: ritobin_cli.exe failed on $f (exit code $status)"
+        errors=$((errors+1))
+    else
+        echo "✅ Converted $f"
+    fi
 done
 
-echo "✅ Conversion finished."
+if [ $errors -gt 0 ]; then
+    echo "⚠️  Conversion completed with $errors error(s)."
+    exit 1
+else
+    echo "🎉 All files converted successfully."
+fi
 
