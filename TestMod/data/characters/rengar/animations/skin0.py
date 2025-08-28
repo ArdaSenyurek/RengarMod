@@ -134,7 +134,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Spell2" =  AtomicClipData {
-                mTrackDataName: hash = "WTrack"
+                mTrackDataName: hash = "Spell2"
                 mMaskDataName: hash = "UpperBody"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
@@ -148,7 +148,7 @@ entries: map[hash,embed] = {
                 # }
             }
             "Spell3" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "AA"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell3.anm"
                 }
@@ -211,7 +211,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Attack1" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "AA"
                 mEventDataMap: map[hash,pointer] = {
                     0xb5b7e047 = ParticleEventData {
                         mName: hash = 0xb5b7e047
@@ -229,7 +229,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Attack2" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "AA"
                 mEventDataMap: map[hash,pointer] = {
                     0xb6b7e1da = ParticleEventData {
                         mName: hash = 0xb6b7e1da
@@ -247,7 +247,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Attack3" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "AA"
                 mEventDataMap: map[hash,pointer] = {
                     0xb7b7e36d = ParticleEventData {
                         mName: hash = 0xb7b7e36d
@@ -298,7 +298,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Attack4" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "AA"
                 mEventDataMap: map[hash,pointer] = {
                     0xb0b7d868 = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas"
@@ -717,18 +717,17 @@ entries: map[hash,embed] = {
             }
         }
         mTrackDataMap: map[hash,embed] = {
-            "Channel" = TrackData {}
-            "Actions" = TrackData {
-                mPriority: u8 = 2
-            }
             "Default" = TrackData {
                 mPriority: u8 = 4
             }
-            "HoodOnTrack" = TrackData {
-                mPriority: u8 = 1
-            }
-            "WTrack" = TrackData { #Placed above the Default track s.t only bones masked with upoerBody is affected from Spell2. 
+            "Spell2" = TrackData {
                 mPriority: u8 = 3
+            }
+            "AA" = TrackData { 
+                mPriority: u8 = 2
+            }
+            "Spell3" = TrackData { 
+                mPriority: u8 = 1
             }
         }
         mBlendDataTable: map[u64,pointer] = {

@@ -1,0 +1,10 @@
+E > Run
+E > W
+E > Q
+E > Q
+
+E > AA (Not sure, 7.48)
+
+
+
+W < AA
