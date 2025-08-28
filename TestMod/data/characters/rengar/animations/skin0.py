@@ -134,8 +134,8 @@ entries: map[hash,embed] = {
                 }
             }
             "Spell2" =  AtomicClipData {
-                mTrackDataName: hash = "UpperBody"
-                mMaskDataName: hash = "WTrack"
+                mTrackDataName: hash = "WTrack"
+                mMaskDataName: hash = "UpperBody"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
                 }
