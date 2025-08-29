@@ -1615,7 +1615,7 @@ entries: map[hash,embed] = {
             mAmmoCountHiddenInUI: bool = true
             mCantCancelWhileWindingUp: bool = true
             mDisableCastBar: bool = true
-            alwaysSnapFacing: bool = true
+            alwaysSnapFacing: bool = false
             castRange: list[f32] = {
                 25000
                 25000
@@ -1856,7 +1856,7 @@ entries: map[hash,embed] = {
             mApplyAttackDamage: bool = true
             mApplyAttackEffect: bool = true
             mDisableCastBar: bool = true
-            alwaysSnapFacing: bool = true
+            alwaysSnapFacing: bool = false
             mUseAutoattackCastTimeData: pointer = UseAutoattackCastTimeData {
             }
             mConsideredAsAutoAttack: bool = true
@@ -2140,7 +2140,7 @@ entries: map[hash,embed] = {
             mApplyAttackDamage: bool = true
             mApplyAttackEffect: bool = true
             mDisableCastBar: bool = true
-            alwaysSnapFacing: bool = true
+            alwaysSnapFacing: bool = false
             mUseAutoattackCastTimeData: pointer = UseAutoattackCastTimeData {
             }
             mConsideredAsAutoAttack: bool = true
@@ -2426,7 +2426,7 @@ entries: map[hash,embed] = {
             mAmmoCountHiddenInUI: bool = true
             mCantCancelWhileWindingUp: bool = true
             mDisableCastBar: bool = true
-            alwaysSnapFacing: bool = true
+            alwaysSnapFacing: bool = false
             castRange: list[f32] = {
                 25000
                 25000
@@ -3316,7 +3316,7 @@ entries: map[hash,embed] = {
             canCastWhileDisabled: bool = true
             mCantCancelWhileWindingUp: bool = true
             mDisableCastBar: bool = true
-            alwaysSnapFacing: bool = true
+            alwaysSnapFacing: bool = false
             castRange: list[f32] = {
                 25000
                 25000
@@ -4114,7 +4114,7 @@ entries: map[hash,embed] = {
             }
             mAmmoCountHiddenInUI: bool = true
             mCantCancelWhileWindingUp: bool = true
-            alwaysSnapFacing: bool = true
+            alwaysSnapFacing: bool = false
             useAnimatorFramerate: bool = true
             castRange: list[f32] = {
                 25000
@@ -4650,7 +4650,7 @@ entries: map[hash,embed] = {
             canCastWhileDisabled: bool = true
             mCantCancelWhileWindingUp: bool = true
             mDisableCastBar: bool = true
-            alwaysSnapFacing: bool = true
+            alwaysSnapFacing: bool = false
             castRange: list[f32] = {
                 25000
                 25000

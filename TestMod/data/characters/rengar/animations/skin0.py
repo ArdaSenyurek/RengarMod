@@ -297,16 +297,53 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1_Fast.anm"
                 }
             }
-            "Attack4" = AtomicClipData {
+            "Attack4" = ConditionBoolClipData {
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer = AllTrueMaterialDriver {
+                        mDrivers: list[pointer] = {
+                            IsAttackingBoolDriver {}
+                            HasBuffDynamicMaterialBoolDriver {
+                                Spell: hash = "Characters/Rengar/Spells/RengarQAbility/RengarQEmp"
+                            }
+                        }
+                    }
+                }
+                mChangeAnimationMidPlay: bool = false
+                mTrueConditionClipName: hash = "A4_Emp"
+                mFalseConditionClipName: hash = "A4_Normal"
+            }
+            "A4_Normal" = AtomicClipData {
                 mTrackDataName: hash = "AA"
                 mEventDataMap: map[hash,pointer] = {
-                    0xb0b7d868 = ParticleEventData {
+                    "Normal" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas"
+                        mStartFrame: f32 = 20
                         mParticleEventDataPairList: list[embed] = {
                             ParticleEventDataPair {}
                         }
+                        mFireIfAnimationEndsEarly: bool = true
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
+                        #mIsDetachable: bool = true
+                    }
+                }
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4.anm"
+                }
+            }
+            "A4_Emp" = AtomicClipData {
+                mTrackDataName: hash = "AA"
+                mEventDataMap: map[hash,pointer] = {
+                    "Emp" = ParticleEventData {
+                        mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
+                        mStartFrame: f32 = 20
+                        mParticleEventDataPairList: list[embed] = {
+                            ParticleEventDataPair {}
+                        }
+                        mFireIfAnimationEndsEarly: bool = true
+                        mIsLoop: bool = false
+                        mIsKillEvent: bool = false
+                        #mIsDetachable: bool = true
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
