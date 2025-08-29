@@ -4,7 +4,7 @@ version: u32 = 3
 linked: list[string] = {}
 entries: map[hash,embed] = {
     "Characters/Rengar/Animations/Skin0" = animationGraphData {
-        mCascadeBlendValue: f32 = 0
+        mUseCascadeBlend: bool = false     
         mClipDataMap: map[hash,pointer] = {
             "Channel" = AtomicClipData {
                 mFlags: u32 = 2
@@ -88,15 +88,16 @@ entries: map[hash,embed] = {
                 }
             }
             "Run" = AtomicClipData {
-                mFlags: u32 = 2
+                #mFlags: u32 = 2
                 mTrackDataName: hash = "Default"
-                mEventDataMap: map[hash,pointer] = {
-                    0x26a07077 = ConformToPathEventData {
-                        mMaskDataName: hash = 0x26a07077
-                        mBlendInTime: f32 = 0.1
-                        mBlendOutTime: f32 = 0.2
-                    }
-                }
+                #mMaskDataName: hash = "UpperBody"
+                # mEventDataMap: map[hash,pointer] = {
+                    # 0x26a07077 = ConformToPathEventData {
+                        # mMaskDataName: hash = 0x26a07077
+                        # mBlendInTime: f32 = 0.1
+                        # mBlendOutTime: f32 = 0.2
+                    # }
+                # }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1.anm"
                 }
@@ -174,7 +175,25 @@ entries: map[hash,embed] = {
             "Spell5" = AtomicClipData {
                 mTrackDataName: hash = "AA"
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_dash1.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_dash_s4.anm"
+                }
+                mUpdaterResourceData: pointer = UpdaterResourceData {
+                    mUpdaterDataList: list[embed] = {
+                        UpdaterData {
+                            Input: pointer = LogicDriverFloatParametricUpdater {
+                                Driver: pointer = DistanceToPlayerMaterialFloatDriver {
+                                    MinDistance: f32 = 0
+                                    MaxDistance: f32 = 750
+                                }
+                            }
+                            mOutputType: u32 = 1
+                            mValueProcessorDataList: list[pointer] = {
+                                LinearTransformProcessorData {
+                                    mIncrement: f32 = 2.25
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "Spell6" = AtomicClipData {
@@ -230,6 +249,7 @@ entries: map[hash,embed] = {
             }
             "Attack2" = AtomicClipData {
                 mTrackDataName: hash = "AA"
+                #mMaskDataName: hash = "UpperBody"
                 mEventDataMap: map[hash,pointer] = {
                     0xb6b7e1da = ParticleEventData {
                         mName: hash = 0xb6b7e1da
@@ -324,26 +344,27 @@ entries: map[hash,embed] = {
                         mFireIfAnimationEndsEarly: bool = true
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
-                        #mIsDetachable: bool = true
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4.anm"
                 }
+
+                
+                
             }
             "A4_Emp" = AtomicClipData {
                 mTrackDataName: hash = "AA"
                 mEventDataMap: map[hash,pointer] = {
                     "Emp" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
-                        mStartFrame: f32 = 20
+                        mStartFrame: f32 = 18
                         mParticleEventDataPairList: list[embed] = {
                             ParticleEventDataPair {}
                         }
                         mFireIfAnimationEndsEarly: bool = true
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
-                        #mIsDetachable: bool = true
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
