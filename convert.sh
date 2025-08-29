@@ -1,45 +1,26 @@
 #!/bin/bash
 # convert.sh
-# Reconvert only if .py or .bin in the folder changed (working dir check)
+# Reconvert modified Python sources, with proper error logging
 
-# Get modified tracked .py or .bin files (unstaged or staged)
-changed=$(git ls-files -m '*.py' '*.bin')
-
-if [ -z "$changed" ]; then
-    echo "No modified .py or .bin files."
-    exit 0
-fi
-
-# Collect corresponding .py sources
-pyfiles=""
-for f in $changed; do
-    if [[ $f == *.py ]]; then
-        pyfiles="$pyfiles $f"
-    elif [[ $f == *.bin ]]; then
-        # find a .py in the same directory (if any)
-        dir=$(dirname "$f")
-        candidate=$(ls "$dir"/*.py 2>/dev/null | head -n 1)
-        if [ -n "$candidate" ]; then
-            pyfiles="$pyfiles $candidate"
-        fi
-    fi
-done
-
-# Deduplicate
-pyfiles=$(echo "$pyfiles" | tr ' ' '\n' | sort -u)
+# Get modified tracked .py files (unstaged or staged)
+pyfiles=$(git ls-files -m '*.py')
 
 if [ -z "$pyfiles" ]; then
-    echo "No .py sources found to convert."
+    echo "No modified Python files."
     exit 0
 fi
 
 errors=0
 for f in $pyfiles; do
     echo "🔄 Converting $f with ritobin_cli.exe..."
-    /mnt/d/csLol/Tools/ritobin/bin/ritobin_cli.exe "$f"
+    
+    # Capture stdout+stderr
+    output=$(/mnt/d/csLol/Tools/ritobin/bin/ritobin_cli.exe "$f" 2>&1)
     status=$?
-    if [ $status -ne 0 ]; then
-        echo "❌ Error: ritobin_cli.exe failed on $f (exit code $status)"
+
+    if [ $status -ne 0 ] || echo "$output" | grep -q "Error:"; then
+        echo "❌ Error converting $f"
+        echo "$output"
         errors=$((errors+1))
     else
         echo "✅ Converted $f"
