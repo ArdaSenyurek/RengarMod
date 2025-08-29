@@ -172,10 +172,21 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
                 }
             }
-            "Spell5" = AtomicClipData {
+            "Spell5" = SequencerClipData {
+                mClipNameList: list[hash] = {
+                    "Spell5_core"
+                    "Spell2"
+                }
+            }
+            "Spell5_core" = AtomicClipData {
                 mTrackDataName: hash = "AA"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_dash_s4.anm"
+                }
+                mEventDataMap: map[hash,pointer] = {
+                    "StopIdle" = StopAnimationEventData {
+                        mStopAnimationName: hash = "idle1"
+                    }
                 }
                 mUpdaterResourceData: pointer = UpdaterResourceData {
                     mUpdaterDataList: list[embed] = {
@@ -189,7 +200,7 @@ entries: map[hash,embed] = {
                             mOutputType: u32 = 1
                             mValueProcessorDataList: list[pointer] = {
                                 LinearTransformProcessorData {
-                                    mIncrement: f32 = 2.25
+                                    mIncrement: f32 = 2.60
                                 }
                             }
                         }
