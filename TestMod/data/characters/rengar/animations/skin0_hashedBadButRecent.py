@@ -1,0 +1,1089 @@
+#PROP_text
+type: string = "PROP"
+version: u32 = 3
+linked: list[string] = {}
+entries: map[hash,embed] = {
+    0x8e279c93 = 0xf5fb07c7 {
+        0x1e53f13e: f32 = 0
+        0x45e122f8: map[hash,pointer] = {
+            0x21c252a4 = 0x5bd9a1e6 {
+                0x8d80922b: u32 = 2
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Channel.anm"
+                }
+            }
+            0xa432c30d = 0x5bd9a1e6 {
+                0x8d80922b: u32 = 2
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Channel_WNDPUP.anm"
+                }
+            }
+            0x9654058d = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xf598463e: map[hash,pointer] = {
+                    0x9654058d = 0x0542d41d {
+                        0x19efbfdb: hash = 0x9654058d
+                        0x250cfbe1: f32 = 3
+                        0xf6386280: hash = 0x7de2fd64
+                        0x60645d6a: list[embed] = {
+                            0x5dd693f9 {}
+                        }
+                        0xd91e32ee: bool = false
+                        0x72a03ff8: bool = false
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_crit.anm"
+                }
+            }
+            0xf815289c = 0x5bd9a1e6 {
+                0x8d80922b: u32 = 2
+                0xd39243c4: hash = 0x933b5bde
+                0xf598463e: map[hash,pointer] = {
+                    0xbc45bbc5 = 0x9c566034 {
+                        0x9d477e74: string = "Play_sfx_Rengar_Dance3D_buffactivate"
+                        0xd91e32ee: bool = false
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Dance.anm"
+                }
+            }
+            0xbd28bd4d = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0xb5b54664
+                0xf598463e: map[hash,pointer] = {
+                    0x4aa50760 = 0x9c566034 {
+                        0x9d477e74: string = "Play_sfx_Rengar_Death3D_cast"
+                        0xd91e32ee: bool = false
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_death.anm"
+                }
+            }
+            0x9dd9dc06 = 0x49f4b8ca {
+                0x512c9525: list[embed] = {
+                    0x6d8884b8 {
+                        0xca2b847d: hash = 0x6c2b2ee6
+                        0x63cb984f: f32 = 75
+                    }
+                    0x6d8884b8 {
+                        0xca2b847d: hash = 0xdfe2e631
+                        0x63cb984f: f32 = 25
+                    }
+                }
+            }
+            0xb695ccbe = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xf598463e: map[hash,pointer] = {
+                    0x0cf0606b = 0x9c566034 {
+                        0x9d477e74: string = "Play_sfx_Rengar_Laugh3D_buffactivate"
+                        0xd91e32ee: bool = false
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Laugh.anm"
+                }
+            }
+            0x2acd4eca = 0x5bd9a1e6 {
+                0x8d80922b: u32 = 2
+                0xd39243c4: hash = 0x933b5bde
+                0xf598463e: map[hash,pointer] = {
+                    0x26a07077 = 0x82377a1d {
+                        0x0359739b: hash = 0x26a07077
+                        0xdf2f42a9: f32 = 0.100000001
+                        0xa8c578b4: f32 = 0.200000003
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1.anm"
+                }
+            }
+            0x59335068 = 0x5bd9a1e6 {
+                0x8d80922b: u32 = 2
+                0xd39243c4: hash = 0x933b5bde
+                0xf598463e: map[hash,pointer] = {
+                    0x26a07077 = 0x82377a1d {
+                        0x0359739b: hash = 0x26a07077
+                        0xdf2f42a9: f32 = 0.100000001
+                        0xa8c578b4: f32 = 0.200000003
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run2.anm"
+                }
+            }
+            0xb2f63868 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0x193f611d: f32 = 1
+                0xf598463e: map[hash,pointer] = {}
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell1.anm"
+                }
+            }
+            0xb5f63d21 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0xb5f63d21
+                0x0359739b: hash = 0x1d3b565f
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
+                }
+            }
+            0xb4f63b8e = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x4c250437
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell3.anm"
+                }
+            }
+            0xb7f64047 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+                }
+            }
+            0xa98dac96 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+                }
+            }
+            0x4b07ae2e = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+                }
+            }
+            0xb6f63eb4 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x4c250437
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_dash1.anm"
+                }
+                0xf598463e: map[hash,pointer] = {
+                    0x93ebe780 = 0xf4d0f73f {
+                        0xcda0540d: hash = 0xb4f63b8e
+                    }
+                }
+            }
+            0xb9f6436d = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0x193f611d: f32 = 0.0166999996
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+                }
+            }
+            0xbc9c8463 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xf598463e: map[hash,pointer] = {
+                    0x968821ce = 0x9c566034 {
+                        0x9d477e74: string = "Play_sfx_Rengar_Taunt3D_buffactivate"
+                        0xd91e32ee: bool = false
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Taunt.anm"
+                }
+            }
+            0x602b063d = 0x5bd9a1e6 {
+                0x8d80922b: u32 = 8
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_recall.anm"
+                }
+            }
+            0x6208af50 = 0x5bd9a1e6 {
+                0x8d80922b: u32 = 2
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_recall_idle.anm"
+                }
+            }
+            0x56b1e924 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x4c250437
+                0xf598463e: map[hash,pointer] = {}
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack1.anm"
+                }
+            }
+            0x59b1eddd = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x4c250437
+                0xf598463e: map[hash,pointer] = {
+                    0xb6b7e1da = 0x0542d41d {
+                        0x19efbfdb: hash = 0xb6b7e1da
+                        0x250cfbe1: f32 = 2
+                        0xf6386280: hash = 0xb8acefdc
+                        0x60645d6a: list[embed] = {
+                            0x5dd693f9 {}
+                        }
+                        0xd91e32ee: bool = false
+                        0x72a03ff8: bool = false
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack2.anm"
+                }
+            }
+            0x58b1ec4a = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x4c250437
+                0xf598463e: map[hash,pointer] = {
+                    0xb7b7e36d = 0x0542d41d {
+                        0x19efbfdb: hash = 0xb7b7e36d
+                        0x250cfbe1: f32 = 2
+                        0xf6386280: hash = 0xd299a983
+                        0x60645d6a: list[embed] = {
+                            0x5dd693f9 {}
+                        }
+                        0xd91e32ee: bool = false
+                        0x72a03ff8: bool = false
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack3.anm"
+                }
+            }
+            0x5a81bdb0 = 0x8d30a7c0 {
+                0x8d80922b: u32 = 2
+                0x078cafd9: list[hash] = {
+                    0x602b063d
+                    0x6208af50
+                }
+            }
+            0xc21e3446 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xf598463e: map[hash,pointer] = {
+                    0xeed2417d = 0x9c566034 {
+                        0x9d477e74: string = "Play_sfx_Rengar_Joke3D_buffactivate"
+                        0xd91e32ee: bool = false
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Joke.anm"
+                }
+            }
+            0x2f4455c0 = 0x5bd9a1e6 {
+                0x8d80922b: u32 = 2
+                0xd39243c4: hash = 0x933b5bde
+                0xf598463e: map[hash,pointer] = {
+                    0x26a07077 = 0x82377a1d {
+                        0x0359739b: hash = 0x26a07077
+                        0xdf2f42a9: f32 = 0.100000001
+                        0xa8c578b4: f32 = 0.200000003
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1_Fast.anm"
+                }
+            }
+            0x53b1e46b = 0x1560dccc {
+                0x16860572: pointer = 0xebfb09e2 {
+                    0xe55419df: pointer = 0x9233f657 {
+                        0x7aceca0f: list[pointer] = {
+                            0x8afb0060 {
+                                0xa96fc6c9: hash = 0xcf1be0cd
+                            }
+                            0x0f9dc1cd {}
+                        }
+                    }
+                }
+                0x4d7a54c0: hash = 0xe7a0db56
+                0x24af5ac1: hash = 0x2d4bd1bf
+                0x4628a916: bool = true
+            }
+            0xe7a0db56 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x4c250437
+                0xf598463e: map[hash,pointer] = {
+                    0x2f37e5be = 0x0542d41d {
+                        0xf6386280: hash = 0x6966c6df
+                        0x250cfbe1: f32 = 15
+                        0x60645d6a: list[embed] = {
+                            0x5dd693f9 {}
+                        }
+                        0xa18eb198: bool = true
+                        0xa3826203: bool = false
+                        0xd91e32ee: bool = false
+                        0x72a03ff8: bool = false
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4.anm"
+                }
+            }
+            0x2d4bd1bf = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x4c250437
+                0xf598463e: map[hash,pointer] = {
+                    0x2f37e5be = 0x0542d41d {
+                        0xf6386280: hash = 0x23369072
+                        0x250cfbe1: f32 = 15
+                        0x60645d6a: list[embed] = {
+                            0x5dd693f9 {}
+                        }
+                        0xa18eb198: bool = true
+                        0xa3826203: bool = false
+                        0xd91e32ee: bool = false
+                        0x72a03ff8: bool = false
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4.anm"
+                }
+            }
+            0x6c2b2ee6 = 0x5bd9a1e6 {
+                0x8d80922b: u32 = 2
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+                }
+            }
+            0xdfe2e631 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle2.anm"
+                }
+            }
+            0x0fb24234 = 0x5bd9a1e6 {
+                0x0359739b: hash = 0x18a7beee
+                0xd39243c4: hash = 0x0864ec7d
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Skin02/Rengar_skin02_hood_on.anm"
+                }
+            }
+            0x713ed5b5 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell1_TRA.anm"
+                }
+            }
+            0x853667c6 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xf598463e: map[hash,pointer] = {
+                    0x26a07077 = 0x82377a1d {
+                        0x0359739b: hash = 0x26a07077
+                        0xdf2f42a9: f32 = 0.100000001
+                        0xa8c578b4: f32 = 0.200000003
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell1_run2_TRA.anm"
+                }
+            }
+            0xbe180b68 = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xf598463e: map[hash,pointer] = {
+                    0x26a07077 = 0x82377a1d {
+                        0x0359739b: hash = 0x26a07077
+                        0xdf2f42a9: f32 = 0.100000001
+                        0xa8c578b4: f32 = 0.200000003
+                    }
+                }
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell1_run_TRA.anm"
+                }
+            }
+            0xd9919b4c = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
+                }
+            }
+            0xb5b5425a = 0x5bd9a1e6 {
+                0xd39243c4: hash = 0x933b5bde
+                0xb49f754e: embed = 0x9a4b299d {
+                    0x0329f1d7: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle3.anm"
+                }
+            }
+        }
+        0xde04746e: map[hash,embed] = {
+            0x18a7beee = 0x2b3c2139 {
+                0xa3c80380: list[f32] = {
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                }
+            }
+            0x26a07077 = 0x2b3c2139 {
+                0xa3c80380: list[f32] = {
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0.25
+                    0.600000024
+                    0.75
+                    0.850000024
+                    1
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                }
+            }
+            0xef7cfc3b = 0x2b3c2139 {
+                0xa3c80380: list[f32] = {
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                }
+            }
+            0x1d3b565f = 0x2b3c2139 {
+                0xa3c80380: list[f32] = {
+                    0
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    1
+                    1
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    1
+                    0
+                    0
+                    1
+                    1
+                    1
+                    0
+                    1
+                    1
+                    0
+                }
+            }
+        }
+        0x38ea85a7: map[hash,embed] = {
+            0x933b5bde = 0x982a3d24 {
+                0x0f717330: u8 = 4
+            }
+            0xb5f63d21 = 0x982a3d24 {
+                0x0f717330: u8 = 3
+            }
+            0x4c250437 = 0x982a3d24 {
+                0x0f717330: u8 = 2
+            }
+            0xb4f63b8e = 0x982a3d24 {
+                0x0f717330: u8 = 1
+            }
+        }
+        0x309113ad: map[u64,pointer] = {
+            2432597616235167053 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            3084207952482581837 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            3405941504494583117 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            5406481393446862157 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            6247030502141246797 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            6391149151960743245 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            6427569503968214349 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            6463208476870491469 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            6521702300475582756 = 0x3d7f07ef {}
+            6521702300509137994 = 0x3d7f07ef {}
+            6521702300525915613 = 0x3d7f07ef {}
+            6521702302194646349 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            6929639313875975501 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            7064088776836431181 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            10832289110054976845 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            11831733634831269197 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            12217611127544659277 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            12895556603804248356 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            12895556603837803594 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            12895556603854581213 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            12895556605523311949 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13039675255342808397 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13156647006022188365 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13183793905162304845 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13255853230072053069 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13399971879891549517 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13590883339407506765 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13630352413820501325 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13987674971085258061 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            17876238949570624845 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            10832289109403501965 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            10832289109883893864 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            1131039250531629160 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0299999993
+            }
+            11831733634412495629 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            11831733634660186216 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            12217611127215729814 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            12217611127373576296 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            12895556603067846346 = 0x1620ad7f {
+                0xca2b847d: hash = 0xbe180b68
+            }
+            12895556603142755776 = 0x1620ad7f {
+                0xca2b847d: hash = 0x853667c6
+            }
+            12895556603753915499 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            12895556603846283368 = 0x1620ad7f {
+                0xca2b847d: hash = 0x853667c6
+            }
+            12895556604164517606 = 0x1620ad7f {
+                0xca2b847d: hash = 0x713ed5b5
+            }
+            12895556604249691573 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            12895556605352228968 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            12895556605538995048 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            12895556606105937457 = 0x1620ad7f {
+                0xca2b847d: hash = 0x713ed5b5
+            }
+            13039675255171725416 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            13039675255205280654 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13093444448966555752 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            13093444449012630106 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13093444449137638733 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13111734580131806497 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13156647005851105384 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            13156647005911895230 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13183793904991221864 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            13183793905058332340 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13255853229900970088 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            13255853229984858183 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13399971879720466536 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            13399971879837909869 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13590883339236423784 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            13590883339398317155 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13630352413649418344 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            13697710809356035179 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            13697710809406368036 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            13697710809439923274 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            13697710809456700893 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            13697710810954348648 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0299999993
+            }
+            13697710811141114728 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            13987674970914175080 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            13987674971168453702 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            15677482531575707752 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            15677482531746790733 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            15677482532223425356 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            1588456593522644187 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            1588456596155283560 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0299999993
+            }
+            16132709916324804712 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            16132709916495887693 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            16132709917078513201 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            17876238949399541864 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            17876238950559197340 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            2432597613627986596 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            2432597616064084072 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            3084207950027116234 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            3084207952311498856 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            3405941502114026944 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            3405941504323500136 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            5406481391532092974 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            5406481393275779176 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            6030852527240919144 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0299999993
+            }
+            6247030501970163816 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            6391149151789660264 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            6427569502291185768 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            6427569503797131368 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            6463208476699408488 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            6521702300539534768 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            6929639312315844157 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            6929639313704892520 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            7064088775307603792 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            7064088776665348200 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            7794375147286900454 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            7794375148474611816 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0250000004
+            }
+            7794375148645694797 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            8160194548925812426 = 0x1620ad7f {
+                0xca2b847d: hash = 0xbe180b68
+            }
+            8160194549000721856 = 0x1620ad7f {
+                0xca2b847d: hash = 0x853667c6
+            }
+            8160194549611881579 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            8160194549662214436 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            8160194549695769674 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            8160194549704249448 = 0x1620ad7f {
+                0xca2b847d: hash = 0x853667c6
+            }
+            8160194549712547293 = 0x3d7f07ef {
+                0xac251151: f32 = 0.100000001
+            }
+            8160194550022483686 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            8160194550107657653 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            8160194551210195048 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0299999993
+            }
+            8160194551963903537 = 0x3d7f07ef {
+                0xac251151: f32 = 0
+            }
+            9598973758890457192 = 0x3d7f07ef {
+                0xac251151: f32 = 0.0299999993
+            }
+        }
+    }
+}
