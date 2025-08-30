@@ -4,8 +4,7 @@ version: u32 = 3
 linked: list[string] = {}
 entries: map[hash,embed] = {
     "Characters/Rengar/Animations/Skin0" = animationGraphData {
-        mUseCascadeBlend: bool = true
-        mCascadeBlendValue: f32 = 0.2
+        mUseCascadeBlend: bool = false
         mClipDataMap: map[hash,pointer] = {
             "Channel" = AtomicClipData {
                 mFlags: u32 = 2
@@ -103,7 +102,19 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1.anm"
                 }
             }
-            "Run2" = AtomicClipData {
+            "Run2" = ConditionBoolClipData {
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer = HasBuffDynamicMaterialBoolDriver {
+                            mScriptName: string = "RengarPassiveBuff"
+                        }
+                }
+                mChangeAnimationMidPlay: bool = true
+                DontStompTransitionClip: bool = true
+                mTrueConditionClipName: hash = "Run2_Core"
+                mFalseConditionClipName: hash = "Run1_Fast"
+            }
+            
+            "Run2_Core" = AtomicClipData {
                 mFlags: u32 = 2
                 mTrackDataName: hash = "Default"
                 mEventDataMap: map[hash,pointer] = {
@@ -147,8 +158,6 @@ entries: map[hash,embed] = {
                 mPlayAnimChangeFromBeginning: bool = true
                 mTrueConditionClipName: hash = "Spell2_core"
                 mFalseConditionClipName: hash = "Spell2_core"
-                
-                
             }
             "Spell2_core" =  AtomicClipData {
                 mTrackDataName: hash = "Spell2"

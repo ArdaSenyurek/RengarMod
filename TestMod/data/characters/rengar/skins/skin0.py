@@ -153,6 +153,24 @@ entries: map[hash,embed] = {
             attachToBone: string = "Buffbone_Glb_Ground_Loc"
         }
         mResourceResolver: link = "Characters/Rengar/Skins/Skin0/Resources"
+        PersistentEffectConditions: list2[pointer] = {
+            PersistentEffectConditionData {
+                OwnerCondition: pointer = OneTrueMaterialDriver {
+                    mDrivers: list[pointer] = {
+                        IsAnimationPlayingDynamicMaterialBoolDriver {
+                            mAnimationNames: list[hash] = {
+                                "idle1_base"
+                            }
+                        }
+                    
+                    }
+                }                 
+               
+                SubmeshesToHide: list2[hash] = {
+                    "Rengar_Base_MD_Material"
+                }
+            }
+        }
     }
     "Characters/Rengar/Skins/Skin0/Resources" = ResourceResolver {
         resourceMap: map[hash,link] = {
@@ -204,7 +222,6 @@ entries: map[hash,embed] = {
             "Rengar_VO_Seen_BV2" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_VO_Seen"
             "Rengar_P_Buf_Max" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_P_Buf_Max_New"
             0xcdc6293f = 0xa60f0d10
-            "Rengar_RLeap_Override" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_R_LeapMatOverride"
         }
     }
 }
