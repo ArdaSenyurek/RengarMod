@@ -7175,6 +7175,53 @@ entries: map[hash,embed] = {
         particleName: string = "Rengar_Base_Q_Buf_Blade"
         particlePath: string = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_Buf_Blade"
     }
+    
+    "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_R_LeapMatOverride" = VfxSystemDefinitionData {
+        complexEmitterDefinitionData: list[pointer] = {
+            VfxEmitterDefinitionData {
+                rate: embed = ValueFloat {
+                    constantValue: f32 = 2
+                }
+                particleLifetime: embed = ValueFloat {
+                    constantValue: f32 = 2
+                }
+                lifetime: option[f32] = {
+                    1.4
+                }
+                isSingleParticle: flag = true
+                emitterName: string = "on_cast"
+                bindWeight: embed = ValueFloat {
+                    constantValue: f32 = 1
+                }
+                primitive: pointer = VfxPrimitiveAttachedMesh {}
+                # color: embed = ValueColor {
+                    # constantValue: vec4 = { 1, 1, 1, 0 }
+                # }
+                pass: i16 = 100
+                meshRenderFlags: u8 = 0
+                BlendMode: u8 = 1
+                depthBiasFactors: vec2 = { -1, -4 }
+                particleIsLocalOrientation: flag = true
+                isUniformScale: flag = true
+                birthScale0: embed = ValueVector3 {
+                    constantValue: vec3 = { 1.01, 1.01, 1.01 }
+                    # dynamics: pointer = VfxAnimatedVector3fVariableData {
+                        # times: list[f32] = {
+                            # 0
+                            # 1
+                        # }
+                        # values: list[vec3] = {
+                            # { 1, 1.03, 1.03 }
+                            # { 1.1, 1.03, 1.03 }
+                        # }
+                    # }
+                }
+                texture: string = "ASSETS/Characters/Rengar/Skins/Base/rengar_base_tx_cm.tex"
+            }
+        }
+        particleName: string = "Rengar_Base_R_Leap"
+        particlePath: string = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_R_LeapMatOverride"
+    }
 }
 linked: list[string] = {}
 version: u32 = 3

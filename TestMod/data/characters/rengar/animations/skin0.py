@@ -147,6 +147,8 @@ entries: map[hash,embed] = {
                 mPlayAnimChangeFromBeginning: bool = true
                 mTrueConditionClipName: hash = "Spell2_core"
                 mFalseConditionClipName: hash = "Spell2_core"
+                
+                
             }
             "Spell2_core" =  AtomicClipData {
                 mTrackDataName: hash = "Spell2"
@@ -194,6 +196,7 @@ entries: map[hash,embed] = {
                     "Spell5_below"
                 }
             }
+            
             "Spell5_core" = AtomicClipData {
                 mTrackDataName: hash = "AA"
                 mMaskDataName: hash = "UpperBody_ForDash"
@@ -220,6 +223,22 @@ entries: map[hash,embed] = {
                         mStopAnimationName: hash = "Spell5_below"
                         mStartFrame: f32 = 40
                     }
+                    "R_leapOverride" = ParticleEventData {
+                        mName: hash = "Rengar_RLeap_Override"
+                        mStartFrame: f32 = 0
+                        mEffectKey: hash = "Rengar_RLeap_Override"
+                        mParticleEventDataPairList: list[embed] = {
+                            ParticleEventDataPair {}
+                        }
+                        mIsLoop: bool = true
+                        mIsKillEvent: bool = true
+                    }
+                    # "FadeTime" = FadeEventData {
+                    # mStartFrame: f32 = 10
+                    # mFireIfAnimationEndsEarly: bool = true
+                    # mTimeToFade: f32 = 0.001
+                    # mTargetAlpha: f32 = 1
+                    # }
                 }
                 mUpdaterResourceData: pointer = UpdaterResourceData {
                     mUpdaterDataList: list[embed] = {
@@ -399,10 +418,10 @@ entries: map[hash,embed] = {
                     driver: pointer = AllTrueMaterialDriver {
                         mDrivers: list[pointer] = {
                             IsAnimationPlayingDynamicMaterialBoolDriver {
-                            mAnimationNames: list[hash] = {
-                                "spell5"
+                                mAnimationNames: list[hash] = {
+                                    "spell5"
+                                }
                             }
-                        }
                         }
                     }
                 }
@@ -422,6 +441,7 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
+                
                 mChangeAnimationMidPlay: bool = true
                 mTrueConditionClipName: hash = "A4_Emp"
                 mFalseConditionClipName: hash = "A4_Normal"
