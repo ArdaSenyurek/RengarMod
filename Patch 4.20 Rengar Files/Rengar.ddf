@@ -1,0 +1,16 @@
+{"RengarW;f1":{"link":"","coeff":""}}
+{"RengarW;f2":{"link":"","coeff":""}}
+{"RengarW;f3":{"link":"","coeff":""}}
+{"RengarW;f4":{"link":"","coeff":""}}
+{"RengarE;f1":{"link":"","coeff":""}}
+{"RengarE;f2":{"link":"","coeff":""}}
+{"RengarE;f3":{"link":"","coeff":""}}
+{"RengarE;f4":{"link":"","coeff":""}}
+{"RengarQ;f1":{"link":"@dynamic.attackdamage","coeff":"1"}}
+{"RengarQ;f2":{"link":"","coeff":""}}
+{"RengarQ;f3":{"link":"","coeff":""}}
+{"RengarQ;f4":{"link":"","coeff":""}}
+{"RengarR;f1":{"link":"@text","coeff":"5"}}
+{"RengarR;f2":{"link":"","coeff":""}}
+{"RengarR;f3":{"link":"","coeff":""}}
+{"RengarR;f4":{"link":"","coeff":""}}
