@@ -187,6 +187,7 @@ entries: map[hash,embed] = {
             "Rengar_P_Buf_Max" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_P_Buf_Max"
             0xcdc6293f = 0xa60f0d10
             "Rengar_Q_Cas_Max_MyWay" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max_MyWay"
+            "Rengar_RLeap_Override" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Base_R_LeapMatOverride"
         }
     }
 }
