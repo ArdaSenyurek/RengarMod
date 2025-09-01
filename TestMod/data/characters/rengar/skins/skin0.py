@@ -153,26 +153,6 @@ entries: map[hash,embed] = {
             attachToBone: string = "Buffbone_Glb_Ground_Loc"
         }
         mResourceResolver: link = "Characters/Rengar/Skins/Skin0/Resources"
-        PersistentEffectConditions: list2[pointer] = {
-            PersistentEffectConditionData {
-                OwnerCondition: pointer = OneTrueMaterialDriver {
-                    mDrivers: list[pointer] = {
-                        IsAnimationPlayingDynamicMaterialBoolDriver {
-                            mAnimationNames: list[hash] = {
-                                "spell4"
-                                "Spell4_Loop"
-                                "spell4_winddown"
-                            }
-                        }
-                    
-                    }
-                }                 
-               
-                SubmeshesToHide: list2[hash] = {
-                    "Rengar_Base_MD_Material"
-                }
-            }
-        }
     }
     "Characters/Rengar/Skins/Skin0/Resources" = ResourceResolver {
         resourceMap: map[hash,link] = {
@@ -197,7 +177,7 @@ entries: map[hash,embed] = {
             "Rengar_Q_Buf_Claw" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_Buf_Claw"
             "Rengar_Q_Buf_Claw_Max" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_Buf_Claw_Max"
             "Rengar_Q_Cas" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_Cas"
-            "Rengar_Q_Cas_Max" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_Cas_Max"
+            #"Rengar_Q_Cas_Max" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_Cas_Max"
             "Rengar_Q_Max_Tar" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_Max_Tar"
             "Rengar_Q_Strike" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_Strike"
             "Rengar_Q_Tar" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_Tar"
@@ -224,6 +204,8 @@ entries: map[hash,embed] = {
             "Rengar_VO_Seen_BV2" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_VO_Seen"
             "Rengar_P_Buf_Max" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_P_Buf_Max_New"
             0xcdc6293f = 0xa60f0d10
+            
+            "Rengar_Q_Cas_Max_MyWay" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_Cas_Max_MyWay"
             "Rengar_RLeap_Override" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_R_LeapMatOverride"
         }
     }

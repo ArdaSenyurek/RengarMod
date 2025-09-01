@@ -25,7 +25,7 @@ entries: map[hash,embed] = {
                 mEventDataMap: map[hash,pointer] = {
                     "Crit" = ParticleEventData {
                         mName: hash = "Crit"
-                        mStartFrame: f32 = 3
+                        mStartFrame: f32 = 10
                         mEffectKey: hash = "Rengar_C_Cas"
                         mParticleEventDataPairList: list[embed] = {
                             ParticleEventDataPair {}
@@ -87,7 +87,17 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Laugh.anm"
                 }
             }
-            "Run" = AtomicClipData {
+            "Run" = ConditionBoolClipData {
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer = IsInGrassDynamicMaterialBoolDriver {}
+                }
+                mChangeAnimationMidPlay: bool = true
+                SyncFrameOnChangeAnim: bool = true
+                mTrueConditionClipName: hash = "Run_Core"
+                mFalseConditionClipName: hash = "Run_DisableInvis"
+            }
+            
+            "Run_core" = AtomicClipData {
                 mFlags: u32 = 2
                 mTrackDataName: hash = "Default"
                 #mMaskDataName: hash = "UpperBody"
@@ -96,6 +106,32 @@ entries: map[hash,embed] = {
                         mMaskDataName: hash = 0x26a07077
                         mBlendInTime: f32 = 0.1
                         mBlendOutTime: f32 = 0.2
+                    }
+                }
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1.anm"
+                }
+            }
+            
+            "Run_DisableInvis" = AtomicClipData {
+                mFlags: u32 = 2
+                mTrackDataName: hash = "Default"
+                #mMaskDataName: hash = "UpperBody"
+                mEventDataMap: map[hash,pointer] = {
+                    0x26a07077 = ConformToPathEventData {
+                        mMaskDataName: hash = 0x26a07077
+                        mBlendInTime: f32 = 0.1
+                        mBlendOutTime: f32 = 0.2
+                    }
+                    "R_leapOverride" = ParticleEventData {
+                        mName: hash = "Rengar_RLeap_Override"
+                        mStartFrame: f32 = 0
+                        mEffectKey: hash = "Rengar_RLeap_Override"
+                        mParticleEventDataPairList: list[embed] = {
+                            ParticleEventDataPair {}
+                        }
+                        mIsLoop: bool = true
+                        mIsKillEvent: bool = true
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
@@ -410,6 +446,16 @@ entries: map[hash,embed] = {
                         mBlendInTime: f32 = 0.1
                         mBlendOutTime: f32 = 0.2
                     }
+                    "R_leapOverride" = ParticleEventData {
+                        mName: hash = "Rengar_RLeap_Override"
+                        mStartFrame: f32 = 0
+                        mEffectKey: hash = "Rengar_RLeap_Override"
+                        mParticleEventDataPairList: list[embed] = {
+                            ParticleEventDataPair {}
+                        }
+                        mIsLoop: bool = true
+                        mIsKillEvent: bool = true
+                    }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1_Fast.anm"
@@ -540,7 +586,7 @@ entries: map[hash,embed] = {
                 }
                 mEventDataMap: map[hash,pointer] = {
                     "Norm" = ParticleEventData {
-                        mEffectKey: hash = "Rengar_Q_Cas_Max"
+                        mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
                         mStartFrame: f32 = 15
                         mParticleEventDataPairList: list[embed] = {
                             ParticleEventDataPair {}
@@ -548,6 +594,16 @@ entries: map[hash,embed] = {
                         mFireIfAnimationEndsEarly: bool = true
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
+                    }
+                    "R_leapOverride" = ParticleEventData {
+                        mName: hash = "Rengar_RLeap_Override"
+                        mStartFrame: f32 = 0
+                        mEffectKey: hash = "Rengar_RLeap_Override"
+                        mParticleEventDataPairList: list[embed] = {
+                            ParticleEventDataPair {}
+                        }
+                        mIsLoop: bool = true
+                        mIsKillEvent: bool = true
                     }
                 }
             }
@@ -564,6 +620,16 @@ entries: map[hash,embed] = {
                         mFireIfAnimationEndsEarly: bool = true
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
+                    }
+                    "R_leapOverride" = ParticleEventData {
+                        mName: hash = "Rengar_RLeap_Override"
+                        mStartFrame: f32 = 0
+                        mEffectKey: hash = "Rengar_RLeap_Override"
+                        mParticleEventDataPairList: list[embed] = {
+                            ParticleEventDataPair {}
+                        }
+                        mIsLoop: bool = true
+                        mIsKillEvent: bool = true
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {

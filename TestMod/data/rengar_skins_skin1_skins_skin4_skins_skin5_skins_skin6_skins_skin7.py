@@ -9070,7 +9070,7 @@ entries: map[hash,embed] = {
                 isSingleParticle: flag = true
                 emitterName: string = "Slash"
                 bindWeight: embed = ValueFloat {
-                    constantValue: f32 = 1
+                    constantValue: f32 = 0
                 }
                 EmitterPosition: embed = ValueVector3 {
                     constantValue: vec3 = { 0, 100, 80 }
@@ -9150,7 +9150,7 @@ entries: map[hash,embed] = {
                 isSingleParticle: flag = true
                 emitterName: string = "SlashAdd"
                 bindWeight: embed = ValueFloat {
-                    constantValue: f32 = 1
+                    constantValue: f32 = 0
                 }
                 EmitterPosition: embed = ValueVector3 {
                     constantValue: vec3 = { 0, 100, 80 }
