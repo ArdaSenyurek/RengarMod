@@ -2247,7 +2247,7 @@ entries: map[hash,embed] = {
                 particleIsLocalOrientation: flag = true
                 isUniformScale: flag = true
                 isRandomStartFrame: flag = true
-                texture: string = "ASSETS/Shared/Particles/3161color-hold.AprilFools2025.dds"
+                texture: string = "ASSETS/Shared/Particles/3161color-hold.AprilFools2025.tex"
                 numFrames: u16 = 4
                 birthUvScrollRate: embed = ValueVector2 {
                     constantValue: vec2 = { 0.4, 0.2 }
@@ -2423,7 +2423,7 @@ entries: map[hash,embed] = {
                     constantValue: vec2 = { 0, -2.8 }
                 }
                 textureMult: pointer = VfxTextureMultDefinitionData {
-                    textureMult: string = "ASSETS/Particles/HA_PoroRay_Mult.dds"
+                    textureMult: string = "ASSETS/Particles/HA_PoroRay_Mult.tex"
                 }
             }
             VfxEmitterDefinitionData {
@@ -2503,7 +2503,7 @@ entries: map[hash,embed] = {
                     constantValue: vec2 = { 0, -2.8 }
                 }
                 textureMult: pointer = VfxTextureMultDefinitionData {
-                    textureMult: string = "ASSETS/Particles/Siege_SwapTeamsCeremony_Ryze_Base_W_prison_mult.dds"
+                    textureMult: string = "ASSETS/Particles/Siege_SwapTeamsCeremony_Ryze_Base_W_prison_mult.tex"
                 }
             }
         }
@@ -2653,7 +2653,7 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
-                texture: string = "ASSETS/Particles/DoomBots_BossTeemo_PortalTeemo_Skin14_R_LensFlare.dds"
+                texture: string = "ASSETS/Particles/DoomBots_BossTeemo_PortalTeemo_Skin14_R_LensFlare.tex"
             }
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
@@ -2754,7 +2754,7 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
-                texture: string = "ASSETS/Shared/Particles/Flare-Omnimax.TFT_Set15.DDS"
+                texture: string = "ASSETS/Shared/Particles/Flare-Omnimax.TFT_Set15.tex"
             }
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
@@ -2897,7 +2897,7 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
-                texture: string = "ASSETS/Shared/Particles/Flare-Omnimax.TFT_Set15.DDS"
+                texture: string = "ASSETS/Shared/Particles/Flare-Omnimax.TFT_Set15.tex"
             }
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
@@ -2946,7 +2946,7 @@ entries: map[hash,embed] = {
                         }
                     }
                     erosionSliceWidth: f32 = 1.6
-                    erosionMapName: string = "ASSETS/Shared/Particles/akali_blur_02.dds"
+                    erosionMapName: string = "ASSETS/Shared/Particles/akali_blur_02.tex"
                     erosionMapAddressMode: u8 = 0
                 }
                 isUniformScale: flag = true
@@ -3084,7 +3084,7 @@ entries: map[hash,embed] = {
                         }
                     }
                     erosionSliceWidth: f32 = 1.6
-                    erosionMapName: string = "ASSETS/Shared/Particles/akali_blur_02.dds"
+                    erosionMapName: string = "ASSETS/Shared/Particles/akali_blur_02.tex"
                     erosionMapAddressMode: u8 = 0
                 }
                 isUniformScale: flag = true
@@ -3624,7 +3624,7 @@ entries: map[hash,embed] = {
                 }
                 texture: string = "ASSETS/Characters/Rengar/Skins/Skin01/Particles/Rengar_Skin01_Z_Avatar.tex"
                 textureMult: pointer = VfxTextureMultDefinitionData {
-                    textureMult: string = "ASSETS/Shared/Particles/Aatrox_Base_Q_SmokeErode.dds"
+                    textureMult: string = "ASSETS/Shared/Particles/Aatrox_Base_Q_SmokeErode.tex"
                     ParticleIntegratedUvScrollMult: embed = IntegratedValueVector2 {
                         constantValue: vec2 = { 0.1, 0.1 }
                         dynamics: pointer = VfxAnimatedVector2fVariableData {
@@ -4756,7 +4756,7 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
-                texture: string = "ASSETS/Particles/global_ss_cleanse_alphaslice.dds"
+                texture: string = "ASSETS/Particles/global_ss_cleanse_alphaslice.tex"
             }
         }
         particleName: string = "Rengar_SKin01_W_Emp_Buf2"
@@ -4904,7 +4904,7 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
-                texture: string = "ASSETS/Particles/DoomBots_BossTeemo_PortalTeemo_Skin14_R_LensFlare.dds"
+                texture: string = "ASSETS/Particles/DoomBots_BossTeemo_PortalTeemo_Skin14_R_LensFlare.tex"
             }
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
@@ -5005,7 +5005,7 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
-                texture: string = "ASSETS/Shared/Particles/Flare-Omnimax.TFT_Set15.DDS"
+                texture: string = "ASSETS/Shared/Particles/Flare-Omnimax.TFT_Set15.tex"
             }
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
@@ -5148,7 +5148,7 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
-                texture: string = "ASSETS/Shared/Particles/Flare-Omnimax.TFT_Set15.DDS"
+                texture: string = "ASSETS/Shared/Particles/Flare-Omnimax.TFT_Set15.tex"
             }
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
@@ -5197,7 +5197,7 @@ entries: map[hash,embed] = {
                         }
                     }
                     erosionSliceWidth: f32 = 1.6
-                    erosionMapName: string = "ASSETS/Shared/Particles/akali_blur_02.dds"
+                    erosionMapName: string = "ASSETS/Shared/Particles/akali_blur_02.tex"
                     erosionMapAddressMode: u8 = 0
                 }
                 isUniformScale: flag = true
@@ -5335,7 +5335,7 @@ entries: map[hash,embed] = {
                         }
                     }
                     erosionSliceWidth: f32 = 1.6
-                    erosionMapName: string = "ASSETS/Shared/Particles/akali_blur_02.dds"
+                    erosionMapName: string = "ASSETS/Shared/Particles/akali_blur_02.tex"
                     erosionMapAddressMode: u8 = 0
                 }
                 isUniformScale: flag = true
@@ -5511,7 +5511,7 @@ entries: map[hash,embed] = {
                 depthBiasFactors: vec2 = { -1, -1 }
                 texture: string = "ASSETS/Characters/Rengar/Skins/Skin01/Particles/Rengar_Skin01_Q_Mask.tex"
                 textureMult: pointer = VfxTextureMultDefinitionData {
-                    textureMult: string = "ASSETS/Particles/DarkstarMode_LanternPullTetherThresh_Skin05_W_Einstein_01_mult.dds"
+                    textureMult: string = "ASSETS/Particles/DarkstarMode_LanternPullTetherThresh_Skin05_W_Einstein_01_mult.tex"
                     birthUvScrollRateMult: embed = ValueVector2 {
                         constantValue: vec2 = { 0.5, 0 }
                     }
@@ -5556,7 +5556,7 @@ entries: map[hash,embed] = {
                 depthBiasFactors: vec2 = { -1, -2 }
                 texture: string = "ASSETS/Characters/Rengar/Skins/Skin01/Particles/Rengar_Skin01_Q_Blade_Mask.tex"
                 textureMult: pointer = VfxTextureMultDefinitionData {
-                    textureMult: string = "ASSETS/Particles/DarkstarMode_LanternPullTetherThresh_Skin05_W_Einstein_01_mult.dds"
+                    textureMult: string = "ASSETS/Particles/DarkstarMode_LanternPullTetherThresh_Skin05_W_Einstein_01_mult.tex"
                     birthUvScrollRateMult: embed = ValueVector2 {
                         constantValue: vec2 = { 0.8, 0 }
                     }
@@ -8184,6 +8184,7 @@ entries: map[hash,embed] = {
         }
         particleName: string = "Rengar_Skin01_P_Buf_Enhanced_Ring"
         particlePath: string = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_P_Buf_Enhanced_Ring"
+        flags: u16 = 196
     }
     "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Max_Tar" = VfxSystemDefinitionData {
         complexEmitterDefinitionData: list[pointer] = {
@@ -9050,5 +9051,172 @@ entries: map[hash,embed] = {
         particleName: string = "Rengar_Skin01_P_Buf_Max"
         particlePath: string = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_P_Buf_Max"
         soundOnCreateDefault: string = "Play_sfx_Rengar_RengarPEmp_buffactivate"
+    }
+    "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max_MyWay" = VfxSystemDefinitionData {
+        complexEmitterDefinitionData: list[pointer] = {
+            VfxEmitterDefinitionData {
+                rate: embed = ValueFloat {
+                    constantValue: f32 = 3
+                }
+                particleLifetime: embed = ValueFloat {
+                    constantValue: f32 = 0.3
+                }
+                particleLinger: option[f32] = {
+                    10.3
+                }
+                lifetime: option[f32] = {
+                    1
+                }
+                isSingleParticle: flag = true
+                emitterName: string = "Slash"
+                bindWeight: embed = ValueFloat {
+                    constantValue: f32 = 1
+                }
+                EmitterPosition: embed = ValueVector3 {
+                    constantValue: vec3 = { 0, 100, 80 }
+                }
+                primitive: pointer = VfxPrimitiveMesh {
+                    mMesh: embed = VfxMeshDefinitionData {
+                        mSimpleMeshName: string = "ASSETS/Characters/Rengar/Skins/Base/Particles/Rengar_Base_Q_Rengar_Base_Q_Slash.sco"
+                    }
+                }
+                blendMode: u8 = 1
+                color: embed = ValueColor {
+                    constantValue: vec4 = { 1, 0.4549, 0.1373, 1 }
+                    dynamics: pointer = VfxAnimatedColorVariableData {
+                        times: list[f32] = {
+                            0
+                            0.5
+                            1
+                        }
+                        values: list[vec4] = {
+                            { 1, 0.4549, 0.1373, 1 }
+                            { 1, 0.4549, 0.1373, 1 }
+                            { 1, 0.4549, 0.1373, 0 }
+                        }
+                    }
+                }
+                pass: i16 = 1
+                disableBackfaceCull: bool = true
+                birthRotation0: embed = ValueVector3 {
+                    constantValue: vec3 = { 0, 180, 0 }
+                }
+                birthScale0: embed = ValueVector3 {
+                    constantValue: vec3 = { 200, 200, 200 }
+                    dynamics: pointer = VfxAnimatedVector3fVariableData {
+                        probabilityTables: list[pointer] = {
+                            VfxProbabilityTableData {
+                                keyTimes: list[f32] = {
+                                    0
+                                    1
+                                }
+                                keyValues: list[f32] = {
+                                    1
+                                    1.25
+                                }
+                            }
+                            VfxProbabilityTableData {}
+                            VfxProbabilityTableData {}
+                        }
+                        times: list[f32] = {
+                            0
+                        }
+                        values: list[vec3] = {
+                            { 200, 200, 200 }
+                        }
+                    }
+                }
+                texture: string = "ASSETS/Characters/Rengar/Skins/Base/Particles/Rengar_Base_Q_Slash_New.tex"
+                birthUvScrollRate: embed = ValueVector2 {
+                    constantValue: vec2 = { 0, -2.8 }
+                }
+                textureMult: pointer = VfxTextureMultDefinitionData {
+                    textureMult: string = "ASSETS/Particles/HA_PoroRay_Mult.dds"
+                }
+            }
+            VfxEmitterDefinitionData {
+                rate: embed = ValueFloat {
+                    constantValue: f32 = 3
+                }
+                particleLifetime: embed = ValueFloat {
+                    constantValue: f32 = 0.3
+                }
+                particleLinger: option[f32] = {
+                    10.3
+                }
+                lifetime: option[f32] = {
+                    1
+                }
+                isSingleParticle: flag = true
+                emitterName: string = "SlashAdd"
+                bindWeight: embed = ValueFloat {
+                    constantValue: f32 = 1
+                }
+                EmitterPosition: embed = ValueVector3 {
+                    constantValue: vec3 = { 0, 100, 80 }
+                }
+                primitive: pointer = VfxPrimitiveMesh {
+                    mMesh: embed = VfxMeshDefinitionData {
+                        mSimpleMeshName: string = "ASSETS/Characters/Rengar/Skins/Base/Particles/Rengar_Base_Q_Rengar_Base_Q_Slash.sco"
+                    }
+                }
+                blendMode: u8 = 4
+                color: embed = ValueColor {
+                    constantValue: vec4 = { 1, 0.3647, 0, 0.5 }
+                    dynamics: pointer = VfxAnimatedColorVariableData {
+                        times: list[f32] = {
+                            0
+                            0.5
+                            1
+                        }
+                        values: list[vec4] = {
+                            { 1, 0.3647, 0, 0.5 }
+                            { 1, 0.3647, 0, 0.5 }
+                            { 1, 0.3647, 0, 0 }
+                        }
+                    }
+                }
+                pass: i16 = 2
+                disableBackfaceCull: bool = true
+                birthRotation0: embed = ValueVector3 {
+                    constantValue: vec3 = { 0, 180, 0 }
+                }
+                birthScale0: embed = ValueVector3 {
+                    constantValue: vec3 = { 200, 200, 200 }
+                    dynamics: pointer = VfxAnimatedVector3fVariableData {
+                        probabilityTables: list[pointer] = {
+                            VfxProbabilityTableData {
+                                keyTimes: list[f32] = {
+                                    0
+                                    1
+                                }
+                                keyValues: list[f32] = {
+                                    1
+                                    1.25
+                                }
+                            }
+                            VfxProbabilityTableData {}
+                            VfxProbabilityTableData {}
+                        }
+                        times: list[f32] = {
+                            0
+                        }
+                        values: list[vec3] = {
+                            { 200, 200, 200 }
+                        }
+                    }
+                }
+                texture: string = "ASSETS/Characters/Rengar/Skins/Base/Particles/Rengar_Base_Q_Slash_New.tex"
+                birthUvScrollRate: embed = ValueVector2 {
+                    constantValue: vec2 = { 0, -2.8 }
+                }
+                textureMult: pointer = VfxTextureMultDefinitionData {
+                    textureMult: string = "ASSETS/Particles/Siege_SwapTeamsCeremony_Ryze_Base_W_prison_mult.dds"
+                }
+            }
+        }
+        particleName: string = "Rengar_Skin01_Q_Cas_Max_MyWay"
+        particlePath: string = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max_MyWay"
+        flags: u16 = 198
     }
 }

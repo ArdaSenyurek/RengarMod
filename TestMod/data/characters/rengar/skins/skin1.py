@@ -186,6 +186,7 @@ entries: map[hash,embed] = {
             "Rengar_VO_Seen_BV2" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_VO_Seen"
             "Rengar_P_Buf_Max" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_P_Buf_Max"
             0xcdc6293f = 0xa60f0d10
+            "Rengar_Q_Cas_Max_MyWay" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max_MyWay"
         }
     }
 }

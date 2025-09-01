@@ -164,7 +164,7 @@ entries: map[hash,embed] = {
             "Spell2" =  AtomicClipData {
                 mTrackDataName: hash = "Spell2"
                 mMaskDataName: hash = "UpperBody"
-                #mTickDuration: f32 = 0.04166666666
+                mTickDuration: f32 = 0.0333333
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
                 }
@@ -522,10 +522,10 @@ entries: map[hash,embed] = {
                 mFalseConditionClipName: hash = "A4_Normal_jump"
             }
             "A4_Normal_jump" = AtomicClipData {
-                mTrackDataName: hash = "Spell3"
+                mTrackDataName: hash = "AA"
                 #mMaskDataName: hash = "RootExcludedMask"
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_jump.anm"
                 }
                 mUpdaterResourceData: pointer = UpdaterResourceData {
                     mUpdaterDataList: list[embed] = {
@@ -554,7 +554,7 @@ entries: map[hash,embed] = {
                 }
             }
             "A4_Emp_jump" = AtomicClipData {
-                mTrackDataName: hash = "Spell3"
+                mTrackDataName: hash = "AA"
                 #mMaskDataName: hash = "RootExcludedMask"
                 mEventDataMap: map[hash,pointer] = {
                     "Emp" = ParticleEventData {
@@ -569,7 +569,7 @@ entries: map[hash,embed] = {
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_jump.anm"
                 }
             }
             #----------
@@ -977,86 +977,86 @@ entries: map[hash,embed] = {
             }
             "UpperBody" = MaskData {
                 mWeightList: list[f32] = {
-                    0
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    1
-                    1
-                    0
-                    0
-                    0
-                    0
-                    0
-                    0
-                    1
-                    1
-                    1
-                    0
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
-                    1
+                    0.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    1.000000
+                    1.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    0.000000
+                    1.000000
+                    1.000000
+                    0.000000
+
                 }
             }
             "Legs" = MaskData {
@@ -1590,7 +1590,7 @@ entries: map[hash,embed] = {
                 mTime: f32 = 0.025
             }
             3084207950027116234 = TimeBlendData {
-                mTime: f32 = 0
+                mTime: f32 = 10
             }
             3084207952311498856 = TimeBlendData {
                 mTime: f32 = 0.025
