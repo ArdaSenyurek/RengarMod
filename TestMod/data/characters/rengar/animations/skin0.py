@@ -8,20 +8,20 @@ entries: map[hash,embed] = {
         mClipDataMap: map[hash,pointer] = {
             "Channel" = AtomicClipData {
                 mFlags: u32 = 2
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Channel"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Channel.anm"
                 }
             }
             "Channel_Wndup" = AtomicClipData {
                 mFlags: u32 = 2
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Channel"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Channel_WNDPUP.anm"
                 }
             }
             "Crit" = AtomicClipData {
-                mTrackDataName: hash = "AA"
+                mTrackDataName: hash = "Actions"
                 mEventDataMap: map[hash,pointer] = {
                     "Crit" = ParticleEventData {
                         mName: hash = "Crit"
@@ -113,7 +113,6 @@ entries: map[hash,embed] = {
                 mTrueConditionClipName: hash = "Run2_Core"
                 mFalseConditionClipName: hash = "Run1_Fast"
             }
-            
             "Run2_Core" = AtomicClipData {
                 mFlags: u32 = 2
                 mTrackDataName: hash = "Default"
@@ -146,7 +145,7 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell1.anm"
                 }
             }
-            "Spell2_xd" = ConditionBoolClipData {
+            "Spell2" = ConditionBoolClipData {
                 Updater: pointer = LogicDriverBoolParametricUpdater {
                     driver: pointer = IsAnimationPlayingDynamicMaterialBoolDriver {
                         mAnimationNames: list[hash] = {
@@ -161,41 +160,41 @@ entries: map[hash,embed] = {
                 mTrueConditionClipName: hash = "Spell2_core"
                 mFalseConditionClipName: hash = "Spell2_core"
             }
-            "Spell2" =  AtomicClipData {
-                mTrackDataName: hash = "Spell2"
+            "Spell2_core" =  AtomicClipData {
+                mTrackDataName: hash = "Spell"
                 mMaskDataName: hash = "UpperBody"
                 mTickDuration: f32 = 0.0333333
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
                 }
-                # mEventDataMap: map[hash,pointer] = {
-                    # 0x26a07077 = ConformToPathEventData {
-                        # mMaskDataName: hash = 0x26a07077
-                        # mBlendInTime: f32 = 0.1
-                        # mBlendOutTime: f32 = 0.2
-                    # }
-                # }
+                mEventDataMap: map[hash,pointer] = {
+                    0x26a07077 = ConformToPathEventData {
+                        mMaskDataName: hash = 0x26a07077
+                        mBlendInTime: f32 = 0.1
+                        mBlendOutTime: f32 = 0.2
+                    }
+                }
             }
             "Spell3" = AtomicClipData {
-                mTrackDataName: hash = "AA"
+                mTrackDataName: hash = "Actions"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell3.anm"
                 }
             }
             "Spell4" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Actions"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_death.anm"
                 }
             }
             "Spell4_Loop" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Actions"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
                 }
             }
             "Spell4_Winddown" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Actions"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_death.anm"
                 }
@@ -206,10 +205,9 @@ entries: map[hash,embed] = {
                     "Spell5_core"
                     "Spell5_below"
                 }
-            }
-            
+            }      
             "Spell5_core" = AtomicClipData {
-                mTrackDataName: hash = "AA"
+                mTrackDataName: hash = "Actions"
                 mMaskDataName: hash = "UpperBody_ForDash"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash.anm"
@@ -271,7 +269,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Spell5_below" = AtomicClipData {
-                mTrackDataName: hash = "AA_below"
+                mTrackDataName: hash = "Actions_below"
                 mMaskDataName: hash = "Legs"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash.anm"
@@ -297,7 +295,7 @@ entries: map[hash,embed] = {
             }
             #-----------
             "Spell6" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Actions"
                 mTickDuration: f32 = 0.0167
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
@@ -317,20 +315,20 @@ entries: map[hash,embed] = {
             }
             0x602b063d = AtomicClipData {
                 mFlags: u32 = 8
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Channel"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_recall.anm"
                 }
             }
             0x6208af50 = AtomicClipData {
                 mFlags: u32 = 2
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Channel"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_recall_idle.anm"
                 }
             }
             "Attack1" = AtomicClipData {
-                mTrackDataName: hash = "AA"
+                mTrackDataName: hash = "Actions"
                 mEventDataMap: map[hash,pointer] = {
                     0xb5b7e047 = ParticleEventData {
                         mName: hash = 0xb5b7e047
@@ -348,7 +346,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Attack2" = AtomicClipData {
-                mTrackDataName: hash = "AA"
+                mTrackDataName: hash = "Actions"
                 #mMaskDataName: hash = "UpperBody"
                 mEventDataMap: map[hash,pointer] = {
                     0xb6b7e1da = ParticleEventData {
@@ -367,7 +365,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Attack3" = AtomicClipData {
-                mTrackDataName: hash = "AA"
+                mTrackDataName: hash = "Actions"
                 mEventDataMap: map[hash,pointer] = {
                     0xb7b7e36d = ParticleEventData {
                         mName: hash = 0xb7b7e36d
@@ -458,7 +456,7 @@ entries: map[hash,embed] = {
                 mFalseConditionClipName: hash = "A4_Normal"
             }
             "A4_Normal" = AtomicClipData {
-                mTrackDataName: hash = "AA"
+                mTrackDataName: hash = "Actions"
                 mEventDataMap: map[hash,pointer] = {
                     "Normal" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas"
@@ -489,7 +487,7 @@ entries: map[hash,embed] = {
                 }
             }
             "A4_Emp" = AtomicClipData {
-                mTrackDataName: hash = "AA"
+                mTrackDataName: hash = "Actions"
                 mEventDataMap: map[hash,pointer] = {
                     "Emp" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
@@ -522,7 +520,7 @@ entries: map[hash,embed] = {
                 mFalseConditionClipName: hash = "A4_Normal_jump"
             }
             "A4_Normal_jump" = AtomicClipData {
-                mTrackDataName: hash = "AA"
+                mTrackDataName: hash = "Actions"
                 #mMaskDataName: hash = "RootExcludedMask"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_jump.anm"
@@ -554,7 +552,7 @@ entries: map[hash,embed] = {
                 }
             }
             "A4_Emp_jump" = AtomicClipData {
-                mTrackDataName: hash = "AA"
+                mTrackDataName: hash = "Actions"
                 #mMaskDataName: hash = "RootExcludedMask"
                 mEventDataMap: map[hash,pointer] = {
                     "Emp" = ParticleEventData {
@@ -1314,23 +1312,20 @@ entries: map[hash,embed] = {
 
         }
         mTrackDataMap: map[hash,embed] = {
-            "Default" = TrackData {
-                mPriority: u8 = 5
+            "Channel" = TrackData {
+                mPriority: u8 = 0
             }
-            "Spell2" = TrackData {
+            "Default" = TrackData {
                 mPriority: u8 = 4
             }
-            "AA" = TrackData { 
-                mPriority: u8 = 2
-            }
-            "AA_below" = TrackData { 
-                mPriority: u8 = 3
-            }
-            "Spell3" = TrackData { 
+            "Actions" = TrackData { 
                 mPriority: u8 = 1
             }
-            "null" = TrackData { 
-                mPriority: u8 = 6
+            "Spell" = TrackData { 
+                mPriority: u8 = 3
+            }
+            "Actions_below" = TrackData { 
+                mPriority: u8 = 2
             }
         }
         mBlendDataTable: map[u64,pointer] = {
