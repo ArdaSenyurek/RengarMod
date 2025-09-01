@@ -159,7 +159,9 @@ entries: map[hash,embed] = {
                     mDrivers: list[pointer] = {
                         IsAnimationPlayingDynamicMaterialBoolDriver {
                             mAnimationNames: list[hash] = {
-                                "spell5_below"
+                                "spell4"
+                                "Spell4_Loop"
+                                "spell4_winddown"
                             }
                         }
                     

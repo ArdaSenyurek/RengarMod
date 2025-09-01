@@ -185,7 +185,7 @@ entries: map[hash,embed] = {
             "Spell4" = AtomicClipData {
                 mTrackDataName: hash = "Default"
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_death.anm"
                 }
             }
             "Spell4_Loop" = AtomicClipData {
@@ -197,7 +197,7 @@ entries: map[hash,embed] = {
             "Spell4_Winddown" = AtomicClipData {
                 mTrackDataName: hash = "Default"
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_death.anm"
                 }
             }
             #----- Normal Walk Spell 5
@@ -1590,13 +1590,13 @@ entries: map[hash,embed] = {
                 mTime: f32 = 0.025
             }
             3084207950027116234 = TimeBlendData {
-                mTime: f32 = 10
+                mTime: f32 = 0.2
             }
             3084207952311498856 = TimeBlendData {
                 mTime: f32 = 0.025
             }
             3405941502114026944 = TimeBlendData {
-                mTime: f32 = 0
+                mTime: f32 = 0.2
             }
             3405941504323500136 = TimeBlendData {
                 mTime: f32 = 0.025
