@@ -9265,4 +9265,59 @@ entries: map[hash,embed] = {
         particleName: string = "Rengar_Base_R_Leap"
         particlePath: string = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Base_R_LeapMatOverride"
     }
+    "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint" = VfxSystemDefinitionData {
+        complexEmitterDefinitionData: list[pointer] = {
+            VfxEmitterDefinitionData {
+                timeBeforeFirstEmission: f32 = 0
+                rate: embed = ValueFloat {
+                    constantValue: f32 = 1
+                }
+                particleLifetime: embed = ValueFloat {
+                    constantValue: f32 = 30
+                }
+                lifetime: option[f32] = {
+                    1
+                }
+                isSingleParticle: flag = true
+                emitterName: string = "CameraTint"
+                bindWeight: embed = ValueFloat {
+                    constantValue: f32 = 1
+                }
+                EmitterPosition: embed = ValueVector3 {
+                    constantValue: vec3 = { 0,0,0 }
+                }
+                primitive: pointer = VfxPrimitiveCameraQuad {}
+                blendMode: u8 = 1 # 4 is add || 3 just overlaps(alpha val doesn't affect this) || 2 Turns it blue? tested with { 0.2,0.06,0.06, 1 }
+                # 1 overlaps
+                birthColor: embed = ValueColor {
+                    constantValue: vec4 = { 0.35686274509, 0.00392156862, 0.01176470588, 0.35 }
+                }
+                color: embed = ValueColor {
+                    dynamics: pointer = VfxAnimatedColorVariableData {
+                        times: list[f32] = {
+                            0
+                            0.03333333333333333333333333333333
+                        }
+                        values: list[vec4] = {
+                            { 0.35686274509, 0.00392156862, 0.01176470588, 0 }
+                            { 0.35686274509, 0.00392156862, 0.01176470588, 0.35 }
+                        }
+                    }
+                }
+                pass: i16 = 9999
+                disableBackfaceCull: bool = true
+                miscRenderFlags: u8 = 5
+                particleIsLocalOrientation: flag = true
+                birthScale0: embed = ValueVector3 {
+                    constantValue: vec3 = { 250, 250, 250 }
+                }
+                # scale0: embed = ValueVector3 {
+                    # constantValue: vec3 = { 1, 1, 1 }
+                # }
+                texture: string = "ASSETS/Characters/Aatrox/Skins/Skin33/Particles/Aatrox_Skin33_R_Screen_VFX_Veins2.SKINS_Aatrox_Skin33.tex"
+            }
+        }
+        particleName: string = "Rengar_Skin01_Rengar_CameraTint"
+        particlePath: string = "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint"    
+    }
 }

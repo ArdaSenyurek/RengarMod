@@ -135,6 +135,23 @@ entries: map[hash,embed] = {
             }
         }
         mResourceResolver: link = "Characters/Rengar/Skins/Skin1/Resources"
+        PersistentEffectConditions: list2[pointer] = {
+            PersistentEffectConditionData {
+                OwnerCondition: pointer = IsAnimationPlayingDynamicMaterialBoolDriver {
+                    mAnimationNames: list[hash] = {
+                        "Run2_Core"
+                    }
+                }
+                ForceRenderVfx: bool = true
+                PersistentVfxs: list2[embed] = {
+                    PersistentVfxData {
+                        effectKey: hash = "CameraTint"
+                        ShowToOwnerOnly: bool = false
+                        AttachToCamera: bool = true
+                    }
+                }
+            }
+        }
     }
     "Characters/Rengar/Skins/Skin1/Resources" = ResourceResolver {
         resourceMap: map[hash,link] = {
@@ -188,6 +205,7 @@ entries: map[hash,embed] = {
             0xcdc6293f = 0xa60f0d10
             "Rengar_Q_Cas_Max_MyWay" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max_MyWay"
             "Rengar_RLeap_Override" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Base_R_LeapMatOverride"
+            "CameraTint" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint"
         }
     }
 }
