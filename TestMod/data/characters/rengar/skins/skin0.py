@@ -153,6 +153,24 @@ entries: map[hash,embed] = {
             attachToBone: string = "Buffbone_Glb_Ground_Loc"
         }
         mResourceResolver: link = "Characters/Rengar/Skins/Skin0/Resources"
+        PersistentEffectConditions: list2[pointer] = {
+            PersistentEffectConditionData {
+                OwnerCondition: pointer = OneTrueMaterialDriver {
+                    mDrivers: list[pointer] = {
+                        IsAnimationPlayingDynamicMaterialBoolDriver {
+                            mAnimationNames: list[hash] = {
+                                "attack4"
+                            }
+                        }
+                    
+                    }
+                }                 
+               
+                SubmeshesToHide: list2[hash] = {
+                    "Rengar_Base_MD_Material"
+                }
+            }
+        }
     }
     "Characters/Rengar/Skins/Skin0/Resources" = ResourceResolver {
         resourceMap: map[hash,link] = {

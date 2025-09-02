@@ -96,7 +96,6 @@ entries: map[hash,embed] = {
                 mTrueConditionClipName: hash = "Run_Core"
                 mFalseConditionClipName: hash = "Run_DisableInvis"
             }
-            
             "Run_core" = AtomicClipData {
                 mFlags: u32 = 2
                 mTrackDataName: hash = "Default"
@@ -112,7 +111,6 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1.anm"
                 }
             }
-            
             "Run_DisableInvis" = AtomicClipData {
                 mFlags: u32 = 2
                 mTrackDataName: hash = "Default"
@@ -140,17 +138,15 @@ entries: map[hash,embed] = {
             }
             "Run2" = ConditionBoolClipData {
                 Updater: pointer = LogicDriverBoolParametricUpdater {
-                    driver: pointer = FixedDurationTriggeredBoolDriver {
-                        mBoolDriver: pointer = HasBuffDynamicMaterialBoolDriver {
-                            mScriptName: string = "RengarR"
-                        }
-                        mCustomDuration: f32 = 1
+                    driver: pointer = HasBuffDynamicMaterialBoolDriver {
+                        mScriptName: string = "RengarPassiveBuff"
                     }
                 }
                 mChangeAnimationMidPlay: bool = true
                 DontStompTransitionClip: bool = true
-                mTrueConditionClipName: hash = "Run1Fast_core"
-                mFalseConditionClipName: hash = "Run2_Core"
+                SyncFrameOnChangeAnim: bool = true
+                mTrueConditionClipName: hash = "Run2_Core"
+                mFalseConditionClipName: hash = "Run1Fast_core"
             }
             "Run2_Core" = AtomicClipData {
                 mFlags: u32 = 2
@@ -440,6 +436,7 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Joke.anm"
                 }
             }
+            
             "Run1_Fast" = ConditionBoolClipData {
                 Updater: pointer = LogicDriverBoolParametricUpdater {
                     driver: pointer = IsInGrassDynamicMaterialBoolDriver {}
@@ -473,7 +470,7 @@ entries: map[hash,embed] = {
                 mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1_Fast.anm"
                 }   
             }
-           "Run1Fast_core" = AtomicClipData {
+            "Run1Fast_core" = AtomicClipData {
                 mFlags: u32 = 2
                 mTrackDataName: hash = "Default"
                 mEventDataMap: map[hash,pointer] = {
@@ -484,16 +481,10 @@ entries: map[hash,embed] = {
                         }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
-                mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1_Fast.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1_Fast.anm"
                 }   
             }
-            "Q_2" = AtomicClipData { # Doesn't work. Attack spells are really weirdly set-up.
-                mTrackDataName: hash = "Default"
-                mMaskDataName: hash = "UpperBody"
-                mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/rengar_2ndQ.anm"
-                }
-            }
+            
             "Attack4" = ConditionBoolClipData {
                 Updater: pointer = LogicDriverBoolParametricUpdater {
                     driver: pointer = AllTrueMaterialDriver {
@@ -510,6 +501,7 @@ entries: map[hash,embed] = {
                 mTrueConditionClipName: hash = "Attack4_jump"
                 mFalseConditionClipName: hash = "Attack4_land"
             }
+            
             #----- Normal Q 
             "Attack4_land" = ConditionBoolClipData {
                 Updater: pointer = LogicDriverBoolParametricUpdater {
@@ -522,7 +514,6 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
-                
                 mChangeAnimationMidPlay: bool = true
                 mTrueConditionClipName: hash = "A4_Emp"
                 mFalseConditionClipName: hash = "A4_Normal"
@@ -576,6 +567,7 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4.anm"
                 }
             }
+            
             #----- Jump Q 
             "Attack4_jump" = ConditionBoolClipData {
                 Updater: pointer = LogicDriverBoolParametricUpdater {
@@ -662,7 +654,7 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_jump.anm"
                 }
             }
-            #----------
+            
             "Idle1_Base" = AtomicClipData {
                 mFlags: u32 = 2
                 mTrackDataName: hash = "Default"
