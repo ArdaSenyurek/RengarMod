@@ -137,10 +137,8 @@ entries: map[hash,embed] = {
         mResourceResolver: link = "Characters/Rengar/Skins/Skin1/Resources"
         PersistentEffectConditions: list2[pointer] = {
             PersistentEffectConditionData {
-                OwnerCondition: pointer = IsAnimationPlayingDynamicMaterialBoolDriver {
-                    mAnimationNames: list[hash] = {
-                        "Run2_Core"
-                    }
+                OwnerCondition: pointer = HasBuffDynamicMaterialBoolDriver {
+                    mScriptName: string = "RengarPassiveBuff"
                 }
                 ForceRenderVfx: bool = true
                 PersistentVfxs: list2[embed] = {
@@ -176,7 +174,7 @@ entries: map[hash,embed] = {
             "Rengar_Q_Buf_Claw" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Buf_Claw"
             "Rengar_Q_Buf_Claw_Max" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Buf_Claw_Max"
             "Rengar_Q_Cas" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas"
-            "Rengar_Q_Cas_Max" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max"
+            #"Rengar_Q_Cas_Max" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max"
             "Rengar_Q_Max_Tar" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Max_Tar"
             "Rengar_Q_Strike" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Strike"
             "Rengar_Q_Tar" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Tar"

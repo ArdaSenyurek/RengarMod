@@ -520,10 +520,11 @@ entries: map[hash,embed] = {
             }
             "A4_Normal" = AtomicClipData {
                 mTrackDataName: hash = "Actions"
+                mTickDuration: f32 = 0.034
                 mEventDataMap: map[hash,pointer] = {
                     "Normal" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas"
-                        mStartFrame: f32 = 15
+                        mStartFrame: f32 = 7
                         mParticleEventDataPairList: list[embed] = {
                             ParticleEventDataPair {}
                         }
@@ -533,7 +534,7 @@ entries: map[hash,embed] = {
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4_long.anm"
                 }
                 mUpdaterResourceData: pointer = UpdaterResourceData {
                     mUpdaterDataList: list[embed] = {
@@ -554,7 +555,7 @@ entries: map[hash,embed] = {
                 mEventDataMap: map[hash,pointer] = {
                     "Emp" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
-                        mStartFrame: f32 = 15
+                        mStartFrame: f32 = 7
                         mParticleEventDataPairList: list[embed] = {
                             ParticleEventDataPair {}
                         }
@@ -564,7 +565,7 @@ entries: map[hash,embed] = {
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4_long.anm"
                 }
             }
             
@@ -1413,6 +1414,12 @@ entries: map[hash,embed] = {
             }
         }
         mBlendDataTable: map[u64,pointer] = {
+            7794375146876298347 = TimeBlendData {
+            mTime: f32 = 0
+            }
+            16132709914726491243 = TimeBlendData {
+            mTime: f32 = 0
+            }
             13590883337026950592 = TimeBlendData {
             mTime: f32 = 0.2
             }
@@ -1452,7 +1459,7 @@ entries: map[hash,embed] = {
             6247030499760690624 = TimeBlendData {
             mTime: f32 = 0.2
             }
-            12895556603142755776 = TimeBlendData {
+            6030852525031445952 = TimeBlendData {
             mTime: f32 = 0.2
             }
             6427569501587658176 = TimeBlendData {
@@ -1536,7 +1543,7 @@ entries: map[hash,embed] = {
             6247030502030953662 = TimeBlendData {
             mTime: f32 = 0.2
             }
-            12895556605413018814 = TimeBlendData {
+            6030852527301708990 = TimeBlendData {
             mTime: f32 = 0.2
             }
             6427569503857921214 = TimeBlendData {
@@ -1620,7 +1627,7 @@ entries: map[hash,embed] = {
             6247030502132057187 = TimeBlendData {
             mTime: f32 = 0.2
             }
-            12895556605514122339 = TimeBlendData {
+            6030852527402812515 = TimeBlendData {
             mTime: f32 = 0.2
             }
             6427569503959024739 = TimeBlendData {
@@ -1815,19 +1822,19 @@ entries: map[hash,embed] = {
             6427569503914574701 = TimeBlendData {
             mTime: f32 = 0
             }
-            12895556604998048774 = TimeBlendData {
+            6030852526886738950 = TimeBlendData {
             mTime: f32 = 0
             }
-            12895556605436117063 = TimeBlendData {
+            6030852527324807239 = TimeBlendData {
             mTime: f32 = 0
             }
-            12895556605194382486 = TimeBlendData {
+            6030852527083072662 = TimeBlendData {
             mTime: f32 = 0
             }
-            12895556603608542766 = TimeBlendData {
+            6030852525497232942 = TimeBlendData {
             mTime: f32 = 0
             }
-            12895556605469672301 = TimeBlendData {
+            6030852527358362477 = TimeBlendData {
             mTime: f32 = 0
             }
             6247030501615983622 = TimeBlendData {

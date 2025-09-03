@@ -9287,10 +9287,10 @@ entries: map[hash,embed] = {
                     constantValue: vec3 = { 0,0,0 }
                 }
                 primitive: pointer = VfxPrimitiveCameraQuad {}
-                blendMode: u8 = 1 # 4 is add || 3 just overlaps(alpha val doesn't affect this) || 2 Turns it blue? tested with { 0.2,0.06,0.06, 1 }
+                blendMode: u8 = 0 # 4 is add || 3 just overlaps(alpha val doesn't affect this) || 2 Turns it blue? tested with { 0.2,0.06,0.06, 1 }
                 # 1 overlaps
                 birthColor: embed = ValueColor {
-                    constantValue: vec4 = { 0.35686274509, 0.00392156862, 0.01176470588, 0.35 }
+                    constantValue: vec4 = { 0.35686274509, 0.01176470588, 0.01176470588, 0.8 }
                 }
                 color: embed = ValueColor {
                     dynamics: pointer = VfxAnimatedColorVariableData {
@@ -9300,7 +9300,7 @@ entries: map[hash,embed] = {
                         }
                         values: list[vec4] = {
                             { 0.35686274509, 0.00392156862, 0.01176470588, 0 }
-                            { 0.35686274509, 0.00392156862, 0.01176470588, 0.35 }
+                            { 0.35686274509, 1, 0.01176470588, 0.8 }
                         }
                     }
                 }
@@ -9314,7 +9314,7 @@ entries: map[hash,embed] = {
                 # scale0: embed = ValueVector3 {
                     # constantValue: vec3 = { 1, 1, 1 }
                 # }
-                texture: string = "ASSETS/Characters/Aatrox/Skins/Skin33/Particles/Aatrox_Skin33_R_Screen_VFX_Veins2.SKINS_Aatrox_Skin33.tex"
+                texture: string = "ASSETS/Characters/Rengar/Skins/Skin01/Particles/Aatrox_Skin33_R_Screen_VFX_Veins2.SKINS_Aatrox_Skin33.tex"
             }
         }
         particleName: string = "Rengar_Skin01_Rengar_CameraTint"
