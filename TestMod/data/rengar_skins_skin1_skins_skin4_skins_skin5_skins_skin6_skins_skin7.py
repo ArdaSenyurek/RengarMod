@@ -4321,6 +4321,7 @@ entries: map[hash,embed] = {
                 texDiv: vec2 = { 1, 5 }
             }
         }
+        
         particleName: string = "Rengar_Skin01_R_Secondary_Target"
         particlePath: string = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_R_Secondary_Target"
         flags: u16 = 197
