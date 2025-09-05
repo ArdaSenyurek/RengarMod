@@ -182,7 +182,7 @@ entries: map[hash,embed] = {
             "Rengar_R_Buf" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_R_Buf"
             "Rengar_R_Primary_Target" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_R_Primary_Target"
             "Rengar_R_Primary_Target_Enhanced" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_R_Primary_Target_Enhanced"
-            "Rengar_R_Secondary_Target" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_R_Secondary_Target"
+            # "Rengar_R_Secondary_Target" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_R_Secondary_Target"
             "Rengar_R_Secondary_Target_Sound_Off" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_R_Secondary_Target_Sound_Off"
             "Rengar_R_Secondary_Target_Sound_On" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_R_Secondary_Target_Sound_On"
             "Rengar_W_Emp_Buf2" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_SKin01_W_Emp_Buf2"
@@ -203,7 +203,7 @@ entries: map[hash,embed] = {
             0xcdc6293f = 0xa60f0d10
             "Rengar_Q_Cas_Max_MyWay" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max_MyWay"
             "Rengar_RLeap_Override" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Base_R_LeapMatOverride"
-            "CameraTint" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint"
+            #"CameraTint" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint"
         }
     }
 }
