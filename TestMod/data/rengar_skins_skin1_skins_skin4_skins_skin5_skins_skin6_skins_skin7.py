@@ -3414,7 +3414,7 @@ entries: map[hash,embed] = {
                     constantValue: f32 = 2
                 }
                 particleLifetime: embed = ValueFloat {
-                    constantValue: f32 = 2
+                    constantValue: f32 = 4
                 }
                 lifetime: option[f32] = {
                     2.5
