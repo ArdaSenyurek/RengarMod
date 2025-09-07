@@ -2179,42 +2179,125 @@ entries: map[hash,embed] = {
             
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
-                    constantValue: f32 = 1
+                    constantValue: f32 = 0.8
                 }
                 particleLifetime: embed = ValueFloat {
-                    constantValue: f32 = 20
-                }
-                particleLinger: option[f32] = {
-                    -1
+                    constantValue: f32 = 2
                 }
                 lifetime: option[f32] = {
-                    1 
+                    18
                 }
                 emitterName: string = "Avatar"
                 bindWeight: embed = ValueFloat {
                     constantValue: f32 = 1
                 }
                 primitive: pointer = VfxPrimitiveAttachedMesh {}
-                blendMode: u8 = 1
+                blendMode: u8 = 4
                 meshRenderFlags: u8 = 0
                 colorLookUpTypeY: u8 = 3
-                pass: i16 = 5
+                pass: i16 = 60
+                
+                color: embed = ValueColor {
+                    dynamics: pointer = VfxAnimatedColorVariableData {
+                        times: list[f32] = {
+                            0
+                            0.043
+                            0.089
+                            0.172
+                            0.355
+                            0.592
+                            0.788
+                            1
+                        }
+                        values: list[vec4] = {
+                            { 1, 1, 1, 0 }
+                            { 1, 1, 1, 0.1183 }
+                            { 1, 1, 1, 0.86 }
+                            { 1, 1, 1, 1 }
+                            { 1, 1, 1, 0.8827 }
+                            { 1, 1, 1, 0.5068 }
+                            { 1, 1, 1, 0.1313 }
+                            { 1, 1, 1, 0 }
+                        }
+                    }
+                }
+                scale0: embed = ValueVector3 {
+                    dynamics: pointer = VfxAnimatedVector3fVariableData {
+                        times: list[f32] = {
+                            0
+                            0.4929
+                            0.9976
+                        }
+                        values: list[vec3] = {
+                            { 1, 1, 1 }
+                            { 1.05, 1.05, 1.05 }
+                            { 1.1025, 1.1025, 1.1025 }
+                        }
+                    }
+                }
                 isLocalOrientation: flag = true
                 particleIsLocalOrientation: flag = true
                 isRandomStartFrame: flag = true
-                #depthBiasFactors: vec2 = { -1, -3 }
+                depthBiasFactors: vec2 = { -1, -4 }
                 disableBackfaceCull: bool = true
                 particleIsLocalOrientation: flag = true
                 isUniformScale: flag = true
                 isRandomStartFrame: flag = true
-                texDiv: vec2 = { 2, 2 }
+                texDiv: vec2 = { 4, 4 }
                 texture: string = "assets/characters/rengar/skins/base/NewFXs/Rengar_Skin01_R.tex"
                 
                 particleColorTexture: string = "assets/characters/rengar/skins/base/NewFXs/Rengar_Skin01_R_RGB.dds"
                 numFrames: u16 = 16
                 birthUvScrollRate: embed = ValueVector2 {
-                    constantValue: vec2 = { 0.1, 0 }
+                    constantValue: vec2 = { 0.05, 0 }
                 }
+                # textureMult: pointer = VfxTextureMultDefinitionData {
+                    # textureMult: string = "ASSETS/Shared/Particles/Aatrox_Base_Q_SmokeErode.tex"
+                    # ParticleIntegratedUvScrollMult: embed = IntegratedValueVector2 {
+                        # constantValue: vec2 = { 0.1, 0.1 }
+                        # dynamics: pointer = VfxAnimatedVector2fVariableData {
+                            # times: list[f32] = {
+                                # 0
+                            # }
+                            # values: list[vec2] = {
+                                # { 0.1, 0.1 }
+                            # }
+                        # }
+                    # }
+                    # birthUVOffsetMult: embed = ValueVector2 {
+                        # constantValue: vec2 = { 1, 1 }
+                        # dynamics: pointer = VfxAnimatedVector2fVariableData {
+                            # probabilityTables: list[pointer] = {
+                                # VfxProbabilityTableData {
+                                    # keyTimes: list[f32] = {
+                                        # 0
+                                        # 1
+                                    # }
+                                    # keyValues: list[f32] = {
+                                        # -1
+                                        # 1
+                                    # }
+                                # }
+                                # VfxProbabilityTableData {
+                                    # keyTimes: list[f32] = {
+                                        # 0
+                                        # 1
+                                    # }
+                                    # keyValues: list[f32] = {
+                                        # -1
+                                        # 1
+                                    # }
+                                # }
+                            # }
+                            # times: list[f32] = {
+                                # 0
+                            # }
+                            # values: list[vec2] = {
+                                # { 1, 1 }
+                            # }
+                        # }
+                    # }
+                # }
             }
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
@@ -2234,7 +2317,8 @@ entries: map[hash,embed] = {
                 #importance: u8 = 2
                 particleColorTexture: string = "assets/characters/rengar/skins/base/NewFXs/Rengar_Skin01_R_Veins.tex"
                 meshRenderFlags: u8 = 0
-                pass: i16 = 1
+                pass: i16 = 60
+                blendMode: u8 = 1
                 isRandomStartFrame: flag = true
                 MaterialOverrideDefinitions: list[embed] = {
                     VfxMaterialOverrideDefinitionData {
@@ -2243,7 +2327,7 @@ entries: map[hash,embed] = {
                 }
                 texture: string = "assets/characters/rengar/skins/base/NewFXs/Rengar_Skin01_R.tex"
                 numFrames: u16 = 16
-                texDiv: vec2 = { 0.5, 0.5 }
+                #texDiv: vec2 = { 0.5, 0.5 }
                 0xbc022424: pointer = 0x7f70a2b2 {
                     birthScale: embed = ValueFloat {
                         constantValue: f32 = 0
