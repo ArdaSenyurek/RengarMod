@@ -149,6 +149,18 @@ entries: map[hash,embed] = {
                     }
                 }
             }
+            PersistentEffectConditionData {
+                OwnerCondition: pointer = HasBuffDynamicMaterialBoolDriver {
+                    mScriptName: string = "RengarR"
+                }
+                #ForceRenderVfx: bool = true
+                PersistentVfxs: list2[embed] = {
+                    PersistentVfxData {
+                        effectKey: hash = "R_SecondPhase"
+                        ShowToOwnerOnly: bool = false
+                    }
+                }
+            }
         }
     }
     "Characters/Rengar/Skins/Skin1/Resources" = ResourceResolver {
@@ -203,7 +215,9 @@ entries: map[hash,embed] = {
             0xcdc6293f = 0xa60f0d10
             "Rengar_Q_Cas_Max_MyWay" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max_MyWay"
             "Rengar_RLeap_Override" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Base_R_LeapMatOverride"
-            #"CameraTint" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint"
+            "CameraTint" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint"
+            
+            #"R_SecondPhase" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_R_Buf_secondPhase"
         }
     }
 }
