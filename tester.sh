@@ -6,9 +6,9 @@
 #   ./p.sh -hasBuf BuffName
 #   ./p.sh -flush
 
-TEMPLATE="/mnt/d/csLol/Mods/BinTests/Gitted/TestMod/data/characters/rengar/skins/skin0_temp.py"
-OUTFILE="/mnt/d/csLol/Mods/BinTests/Gitted/TestMod/data/characters/rengar/skins/skin0.py"
-
+TEMPLATE="$(pwd)/RengarMod/WAD/rengar.wad.client/data/characters/rengar/skins/skin0_temp.py"
+OUTFILE="$(pwd)/RengarMod/WAD/rengar.wad.client/data/characters/rengar/skins/skin0.py"
+ 
 FLAG=$1
 ARG=$2   # spell name or buff name
 

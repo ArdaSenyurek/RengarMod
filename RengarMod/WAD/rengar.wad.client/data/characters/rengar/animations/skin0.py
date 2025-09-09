@@ -532,6 +532,7 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
                     }
+                    
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4_long.anm"
