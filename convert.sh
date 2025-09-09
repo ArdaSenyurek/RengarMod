@@ -1,5 +1,6 @@
 #!/bin/bash
 # convert.sh
+
 # Convert modified Python files (or their paired bins) with ritobin_cli.exe
 
 # 1. Collect changed .py and .bin files (staged + unstaged vs HEAD)
@@ -56,4 +57,3 @@ if [ $errors -gt 0 ]; then
 else
     echo "🎉 All conversions successful."
 fi
-
