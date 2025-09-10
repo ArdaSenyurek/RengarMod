@@ -248,10 +248,10 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash2.anm"
                 }
                 mEventDataMap: map[hash,pointer] = {
-                    "StopIdle" = StopAnimationEventData {
-                        #mEndFrame: f32 = 20
-                        mStopAnimationName: hash = "idle1"
-                    }
+                    # "StopIdle" = StopAnimationEventData {
+                        # #mEndFrame: f32 = 20
+                        # mStopAnimationName: hash = "idle1"
+                    # }
                     # "StopRun2" = StopAnimationEventData {
                         # mEndFrame: f32 = 20
                         # mStopAnimationName: hash = "run1"
