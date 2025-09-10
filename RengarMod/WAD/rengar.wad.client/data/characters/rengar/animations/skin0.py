@@ -270,6 +270,7 @@ entries: map[hash,embed] = {
                     "R_leapOverride" = ParticleEventData {
                         mName: hash = "Rengar_RLeap_Override"
                         mStartFrame: f32 = 0
+                        mEndFrame: f32 = 30
                         mEffectKey: hash = "Rengar_RLeap_Override"
                         mParticleEventDataPairList: list[embed] = {
                             ParticleEventDataPair {}
