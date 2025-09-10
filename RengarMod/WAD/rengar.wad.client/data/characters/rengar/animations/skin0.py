@@ -375,6 +375,7 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
                     }
+                    
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack1.anm"
@@ -625,6 +626,7 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = true
                         mIsKillEvent: bool = true
                     }
+                    
                 }
             }
             "A4_Emp_jump" = AtomicClipData {
