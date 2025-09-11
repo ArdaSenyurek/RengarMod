@@ -2141,6 +2141,11 @@ entries: map[hash,embed] = {
             mApplyAttackEffect: bool = true
             mDisableCastBar: bool = true
             alwaysSnapFacing: bool = false
+            ShouldReceiveInputEvents: bool = true
+            mIgnoreAnimContinueUntilCastFrame: bool = false
+
+            
+
             mUseAutoattackCastTimeData: pointer = UseAutoattackCastTimeData {
             }
             mConsideredAsAutoAttack: bool = true
