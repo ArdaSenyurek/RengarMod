@@ -195,11 +195,11 @@ entries: map[hash,embed] = {
             "Rengar_P_Leap_tar_crit_sound" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_P_Leap_tar_crit_sound"
             "Rengar_P_Leap_tar_sound" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_P_Leap_tar_sound"
             "Rengar_P_Leap_tar_sound" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Tar_MyWay"
-            "Rengar_Q_AS_Buf" = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_Q_AS_Buf"
+            "Rengar_Q_AS_Buf" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_AS_Buf"
             "Rengar_Q_Buf_Blade" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Buf_Blade"
-            "Rengar_Q_Buf_Blade_Max" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Buf_Blade_Max"
+            "Rengar_Q_Buf_Blade_Max" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Buf_Blade"
             "Rengar_Q_Buf_Claw" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Buf_Claw"
-            "Rengar_Q_Buf_Claw_Max" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Buf_Claw_Max"
+            "Rengar_Q_Buf_Claw_Max" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Buf_Claw"
             "Rengar_Q_Cas" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas"
             "Rengar_Q_Max_Tar" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Max_Tar"
             "Rengar_Q_Strike" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Strike"
@@ -232,7 +232,7 @@ entries: map[hash,embed] = {
             "CameraTint" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint"
             
 
-            "Q_Trail" = "Characters/Rengar/Skins/Skin1/Particles/Q_Trail"
+            #"Q_Trail" = "Characters/Rengar/Skins/Skin1/Particles/Q_Trail"
         }
     }
 }

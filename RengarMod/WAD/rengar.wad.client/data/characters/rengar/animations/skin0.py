@@ -691,6 +691,9 @@ entries: map[hash,embed] = {
             }
             "A4_Normal_Tiamat" = AtomicClipData {
                 mTrackDataName: hash = "Default"
+                
+                mTickDuration: f32 = 0.034
+
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4_long.anm"
                 }
