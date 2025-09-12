@@ -152,7 +152,6 @@ entries: map[hash,embed] = {
                 }
             }
             PersistentEffectConditionData {
-
                 OwnerCondition: pointer = AllTrueMaterialDriver {
                     mDrivers: list[pointer] = {
                         HasBuffDynamicMaterialBoolDriver {
@@ -165,10 +164,8 @@ entries: map[hash,embed] = {
                                 }
                             }
                         }
-                    
                     }
-                }                     
-               
+                }             
                 PersistentVfxs: list2[embed] = {
                     PersistentVfxData {
                         BoneName: string = "weapon"
@@ -177,6 +174,22 @@ entries: map[hash,embed] = {
                     }
                 }
             }
+            
+            
+            PersistentEffectConditionData {
+                OwnerCondition: pointer = HasBuffDynamicMaterialBoolDriver {
+                    mScriptName: string = "RengarPassiveBuff"
+                }
+                #ForceRenderVfx: bool = true
+                PersistentVfxs: list2[embed] = {
+                    PersistentVfxData {
+                        effectKey: hash = "LPF"
+                        ShowToOwnerOnly: bool = true
+                        AttachToCamera: bool = true
+                    }
+                }
+            }
+            
         }
     }
     "Characters/Rengar/Skins/Skin1/Resources" = ResourceResolver {
@@ -232,7 +245,7 @@ entries: map[hash,embed] = {
             "Rengar_Q_Cas_Max_MyWay" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max_MyWay"
             "Rengar_RLeap_Override" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Base_R_LeapMatOverride"
             "CameraTint" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint"
-            
+            "LPF" = "Characters/Rengar/Skins/Skin1/Particles/LPF"
 
             #"Q_Trail" = "Characters/Rengar/Skins/Skin1/Particles/Q_Trail"
         }

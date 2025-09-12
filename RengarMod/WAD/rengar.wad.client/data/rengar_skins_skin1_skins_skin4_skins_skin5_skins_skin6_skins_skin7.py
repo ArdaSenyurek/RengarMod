@@ -12578,15 +12578,14 @@ entries: map[hash,embed] = {
     "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint" = VfxSystemDefinitionData {
         complexEmitterDefinitionData: list[pointer] = {
             VfxEmitterDefinitionData {
-                timeBeforeFirstEmission: f32 = 0
                 rate: embed = ValueFloat {
-                    constantValue: f32 = 1
+                    constantValue: f32 = 0.001
                 }
                 particleLifetime: embed = ValueFloat {
                     constantValue: f32 = 30
                 }
                 lifetime: option[f32] = {
-                    1
+                    30
                 }
                 isSingleParticle: flag = true
                 emitterName: string = "CameraTint"
@@ -12597,34 +12596,91 @@ entries: map[hash,embed] = {
                     constantValue: vec3 = { 0,0,0 }
                 }
                 primitive: pointer = VfxPrimitiveCameraQuad {}
-                blendMode: u8 = 0 # 4 is add || 3 just overlaps(alpha val doesn't affect this) || 2 Turns it blue? tested with { 0.2,0.06,0.06, 1 }
+                blendMode: u8 = 5 # 4 is add || 3 just overlaps(alpha val doesn't affect this) || 2 Turns it blue? tested with { 0.2,0.06,0.06, 1 }
                 # 1 overlaps
                 birthColor: embed = ValueColor {
-                    constantValue: vec4 = { 0.35686274509, 0.01176470588, 0.01176470588, 0.8 }
+                    constantValue: vec4 = { 0.12, 0.001176470588, 0.001176470588, 0.5 }
                 }
                 color: embed = ValueColor {
                     dynamics: pointer = VfxAnimatedColorVariableData {
                         times: list[f32] = {
                             0
-                            0.03333333333333333333333333333333
+                            0.03
+                            1
                         }
                         values: list[vec4] = {
-                            { 0.35686274509, 0.00392156862, 0.01176470588, 0 }
-                            { 0.35686274509, 0.35686274509, 0.01176470588, 0.8 }
+                            { 0, 0, 0, 0 }
+                            { 1, 1, 1, 1 }
+                            { 1, 1, 1, 1 }
                         }
                     }
                 }
+                
                 pass: i16 = 9999
                 disableBackfaceCull: bool = true
-                miscRenderFlags: u8 = 5
+                #miscRenderFlags: u8 = 5
                 particleIsLocalOrientation: flag = true
                 birthScale0: embed = ValueVector3 {
-                    constantValue: vec3 = { 250, 250, 250 }
+                    constantValue: vec3 = { 200,200,200 }
                 }
                 # scale0: embed = ValueVector3 {
                     # constantValue: vec3 = { 1, 1, 1 }
                 # }
-                texture: string = "ASSETS/Characters/Rengar/Skins/Skin01/Particles/Aatrox_Skin33_R_Screen_VFX_Veins2.SKINS_Aatrox_Skin33.tex"
+                texture: string = " "
+                textureMult: pointer = VfxTextureMultDefinitionData {
+                    textureMult: string = "ASSETS/Characters/Rengar/HUD/exp5.dds"
+                    IsRandomStartFrameMult: bool = true
+                    ParticleIntegratedUvScrollMult: embed = IntegratedValueVector2 {
+                        constantValue: vec2 = { 0.2, 0.2 }
+                        dynamics: pointer = VfxAnimatedVector2fVariableData {
+                            times: list[f32] = {
+                                0
+                            }
+                            values: list[vec2] = {
+                                { 0.2, 0.2 }
+                            }
+                        }
+                    }
+                    birthUVOffsetMult: embed = ValueVector2 {
+                        #constantValue: vec2 = { 1, 1 }
+                        dynamics: pointer = VfxAnimatedVector2fVariableData {
+                            probabilityTables: list[pointer] = {
+                                VfxProbabilityTableData {
+                                    keyTimes: list[f32] = {
+                                        0
+                                        1
+                                    }
+                                    keyValues: list[f32] = {
+                                        -1
+                                        1
+                                    }
+                                }
+                                VfxProbabilityTableData {
+                                    keyTimes: list[f32] = {
+                                        0
+                                        1
+                                    }
+                                    keyValues: list[f32] = {
+                                        -1
+                                        1
+                                    }
+                                }
+                            }
+                            times: list[f32] = {
+                                0
+                            }
+                            values: list[vec2] = {
+                                { 0, 0 }
+                            }
+                        }
+                    }
+                    uvScaleMult: embed = ValueVector2 {
+                        constantValue: vec2 = { 5,5 }
+                    }
+                    # BirthUvRotateRateMult: embed = ValueFloat {
+                        # constantValue: f32 = 25
+                    # }
+                }
             }
         }
         particleName: string = "Rengar_Skin01_Rengar_CameraTint"
@@ -13223,5 +13279,11 @@ entries: map[hash,embed] = {
         }
         particleName: string = "Rengar_Base_W_Heal"
         particlePath: string = "Characters/Rengar/Skins/Skin0/Particles/Rengar_Base_W_Heal"
+    }
+    "Characters/Rengar/Skins/Skin1/Particles/LPF" = VfxSystemDefinitionData {
+    
+    particleName: string = "LPF"
+    soundPersistentDefault: string = "Play_sfx_Leap_LPF"
+    particlePath: string = "Characters/Rengar/Skins/Skin1/Particles/LPF"
     }
 }
