@@ -106,6 +106,11 @@ entries: map[hash,embed] = {
                         mBlendInTime: f32 = 0.1
                         mBlendOutTime: f32 = 0.2
                     }
+                    "StopSpell5" = StopAnimationEventData {
+                        #mEndFrame: f32 = 20
+                        mStopAnimationName: hash = "spell5"
+                    }
+                    
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1.anm"
@@ -130,6 +135,10 @@ entries: map[hash,embed] = {
                         }
                         mIsLoop: bool = true
                         mIsKillEvent: bool = true
+                    }
+                    "StopSpell5" = StopAnimationEventData {
+                        #mEndFrame: f32 = 20
+                        mStopAnimationName: hash = "spell5"
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
@@ -239,6 +248,7 @@ entries: map[hash,embed] = {
                 mClipNameList: list[hash] = {
                     "Spell5_core"
                     "Spell5_below"
+                    "Spell5_real"
                 }
             }      
             "Spell5_core_asd" = ConditionFloatClipData {
@@ -317,6 +327,15 @@ entries: map[hash,embed] = {
                     }
                 }
             }
+            
+            "Spell5_real" = AtomicClipData {
+                mTrackDataName: hash = "Default"
+                #mMaskDataName: hash = "UpperBody_ForDash"
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash2.anm"
+                }
+            }
+            
             "Spell5_mid" = AtomicClipData {
                 mTrackDataName: hash = "Actions"
                 mMaskDataName: hash = "UpperBody_ForDash"
