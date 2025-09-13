@@ -106,11 +106,6 @@ entries: map[hash,embed] = {
                         mBlendInTime: f32 = 0.1
                         mBlendOutTime: f32 = 0.2
                     }
-                    "StopSpell5" = StopAnimationEventData {
-                        #mEndFrame: f32 = 20
-                        mStopAnimationName: hash = "spell5"
-                    }
-                    
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_run1.anm"
