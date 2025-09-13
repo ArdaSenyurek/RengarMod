@@ -34,8 +34,6 @@ entries: map[hash,embed] = {
                     bankPath: list[string] = {
                         "ASSETS/Sounds/Wwise2016/SFX/Characters/Rengar/Skins/Base/Rengar_Base_SFX_audio.bnk"
                         "ASSETS/Sounds/Wwise2016/SFX/Characters/Rengar/Skins/Base/Rengar_Base_SFX_events.bnk"
-                        "ASSETS/Sounds/Wwise2016/SFX/Characters/Rengar/Skins/Leap/Leap_SFX_audio.bnk"
-                        "ASSETS/Sounds/Wwise2016/SFX/Characters/Rengar/Skins/Leap/Leap_SFX_events.bnk"
                     }
                     events: list[string] = {
                         "Play_sfx_Rengar_Dance3D_buffactivate"
@@ -82,8 +80,6 @@ entries: map[hash,embed] = {
                         "Play_sfx_Rengar_RengarWEmp_OnCast"
                         "Play_sfx_Rengar_Taunt3D_buffactivate"
                         "Stop_sfx_Rengar_RengarQ_buffactivate"
-                        "Play_sfx_Leap_LPF"
-                        "Stop_sfx_Leap_LPF"
                     }
                 }
                 BankUnit {
@@ -163,7 +159,7 @@ entries: map[hash,embed] = {
                     mDrivers: list[pointer] = {
                         IsAnimationPlayingDynamicMaterialBoolDriver {
                             mAnimationNames: list[hash] = {
-                                "A4_Emp"
+                                "run_disableinvis"
                             }
                         }
                     

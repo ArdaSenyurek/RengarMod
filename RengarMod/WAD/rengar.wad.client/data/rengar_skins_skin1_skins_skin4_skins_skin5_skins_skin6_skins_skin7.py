@@ -12599,7 +12599,7 @@ entries: map[hash,embed] = {
                 blendMode: u8 = 5 # 4 is add || 3 just overlaps(alpha val doesn't affect this) || 2 Turns it blue? tested with { 0.2,0.06,0.06, 1 }
                 # 1 overlaps
                 birthColor: embed = ValueColor {
-                    constantValue: vec4 = { 0.12, 0.001176470588, 0.001176470588, 0.5 }
+                    constantValue: vec4 = { 0.12, 0.001176470588, 0.001176470588, 0.25 }
                 }
                 color: embed = ValueColor {
                     dynamics: pointer = VfxAnimatedColorVariableData {

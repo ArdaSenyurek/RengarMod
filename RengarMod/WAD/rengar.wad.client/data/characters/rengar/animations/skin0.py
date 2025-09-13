@@ -88,8 +88,11 @@ entries: map[hash,embed] = {
                 }
             }
             "Run" = ConditionBoolClipData {
-                Updater: pointer = LogicDriverBoolParametricUpdater {
-                    driver: pointer = IsInGrassDynamicMaterialBoolDriver {}
+                Updater: pointer = LogicDriverBoolParametricUpdater {                
+                    driver: pointer = DelayedBoolMaterialDriver {
+                        mBoolDriver: pointer = IsInGrassDynamicMaterialBoolDriver {}
+                        mDelayOff: f32 = 0.3
+                    }
                 }
                 mChangeAnimationMidPlay: bool = true
                 SyncFrameOnChangeAnim: bool = true
@@ -762,7 +765,7 @@ entries: map[hash,embed] = {
                 mTrackDataName: hash = "Actions"
                 #mMaskDataName: hash = "RootExcludedMask"
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_jump2.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_jump3.anm"
                 }
                 mUpdaterResourceData: pointer = UpdaterResourceData {
                     mUpdaterDataList: list[embed] = {
@@ -771,7 +774,8 @@ entries: map[hash,embed] = {
                             mOutputType: u32 = 1
                             mValueProcessorDataList: list[pointer] = {
                                 LinearTransformProcessorData {
-                                    mMultiplier: f32 = 0.95
+                                    mMultiplier: f32 = 0
+                                    mIncrement: f32 = 0.75
                                 }
                             }
                         }
@@ -827,7 +831,7 @@ entries: map[hash,embed] = {
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_jump2.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_jump3.anm"
                 }
             }
             "A4_Normal_Tiamat_Idle" = SequencerClipData {
