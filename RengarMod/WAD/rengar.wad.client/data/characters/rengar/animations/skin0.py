@@ -671,7 +671,7 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
-                mChangeAnimationMidPlay: bool = true
+                mChangeAnimationMidPlay: bool = false
                 mTrueConditionClipName: hash = "A4_Emp"
                 mFalseConditionClipName: hash = "A4_Normal"
             }
@@ -846,7 +846,7 @@ entries: map[hash,embed] = {
                 mFlags: u32 = 5
                 Updater: pointer = LogicDriverBoolParametricUpdater {
                     driver: pointer =  FixedDurationTriggeredBoolDriver {
-                        mCustomDuration: f32 = 1
+                        mCustomDuration: f32 = 0.5
                         mBoolDriver: pointer = IsCastingBoolDriver {
                             SpellSlot: u32 = 7
                        }
