@@ -46,6 +46,10 @@ entries: map[hash,embed] = {
                         mSoundName: string = "Play_sfx_Rengar_Dance3D_buffactivate"
                         mIsLoop: bool = false
                     }
+                    "StopW" = StopAnimationEventData {
+                        #mEndFrame: f32 = 20
+                        mStopAnimationName: hash = "spell2"
+                    }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Dance.anm"
@@ -82,6 +86,11 @@ entries: map[hash,embed] = {
                         mSoundName: string = "Play_sfx_Rengar_Laugh3D_buffactivate"
                         mIsLoop: bool = false
                     }
+                    "StopW" = StopAnimationEventData {
+                        #mEndFrame: f32 = 20
+                        mStopAnimationName: hash = "spell2"
+                    }
+                    
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Laugh.anm"
@@ -500,6 +509,10 @@ entries: map[hash,embed] = {
                         mSoundName: string = "Play_sfx_Rengar_Taunt3D_buffactivate"
                         mIsLoop: bool = false
                     }
+                    "StopW" = StopAnimationEventData {
+                        #mEndFrame: f32 = 20
+                        mStopAnimationName: hash = "spell2"
+                    }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Taunt.anm"
@@ -507,14 +520,14 @@ entries: map[hash,embed] = {
             }
             0x602b063d = AtomicClipData {
                 mFlags: u32 = 8
-                mTrackDataName: hash = "Channel"
+                mTrackDataName: hash = "Actions"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_recall.anm"
                 }
             }
             0x6208af50 = AtomicClipData {
                 mFlags: u32 = 2
-                mTrackDataName: hash = "Channel"
+                mTrackDataName: hash = "Actions"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_recall_idle.anm"
                 }
@@ -589,6 +602,11 @@ entries: map[hash,embed] = {
                         mSoundName: string = "Play_sfx_Rengar_Joke3D_buffactivate"
                         mIsLoop: bool = false
                     }
+                    "StopW" = StopAnimationEventData {
+                        #mEndFrame: f32 = 20
+                        mStopAnimationName: hash = "spell2"
+                    }
+                    
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Joke.anm"
