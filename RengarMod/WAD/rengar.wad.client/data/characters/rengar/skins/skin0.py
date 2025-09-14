@@ -159,7 +159,7 @@ entries: map[hash,embed] = {
                     mDrivers: list[pointer] = {
                         IsAnimationPlayingDynamicMaterialBoolDriver {
                             mAnimationNames: list[hash] = {
-                                "run_disableinvis"
+                                "sadasd"
                             }
                         }
                     
