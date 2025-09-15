@@ -67,7 +67,7 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_death.anm"
                 }
             }
-            "Idle1_Prob" = SelectorClipData {
+            "Idle1" = SelectorClipData {
                 mSelectorPairDataList: list[embed] = {
                     SelectorPairData {
                         mClipName: hash = "Idle1_Base"
@@ -518,7 +518,7 @@ entries: map[hash,embed] = {
             
             "A4_Jump_Core" = AtomicClipData {
                 mTrackDataName: hash = "channel"
-                #mMaskDataName: hash = "RootExcludedMask"
+                mMaskDataName: hash = "GroundExcluded"
                 mEventDataMap: map[hash,pointer] = {
                     "Emp" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
@@ -550,7 +550,7 @@ entries: map[hash,embed] = {
                             mValueProcessorDataList: list[pointer] = {
                                 LinearTransformProcessorData {
                                     mMultiplier: f32 = 0
-                                    mIncrement: f32 = 3.8
+                                    mIncrement: f32 = 1.2
                                 }
                             }
                         }
@@ -592,7 +592,7 @@ entries: map[hash,embed] = {
                             mValueProcessorDataList: list[pointer] = {
                                 LinearTransformProcessorData {
                                     mMultiplier: f32 = 0
-                                    mIncrement: f32 = 3.8
+                                    mIncrement: f32 = 1.2
                                 }
                             }
                         }
@@ -628,15 +628,27 @@ entries: map[hash,embed] = {
                     "Idle1_Base"
                 }
             }
-            "Idle1" = ConditionBoolClipData {
+            "Idle1_Tiamat" = ConditionBoolClipData {
                 mFlags: u32 = 5
                 Updater: pointer = LogicDriverBoolParametricUpdater {
-                    driver: pointer =  FixedDurationTriggeredBoolDriver {
-                        mCustomDuration: f32 = 1.5
-                        mBoolDriver: pointer = IsCastingBoolDriver {
-                            SpellSlot: u32 = 7
-                       }
+                
+                    driver: pointer = AllTrueMaterialDriver {
+                        mDrivers: list[pointer] = {
+                            IsAnimationPlayingDynamicMaterialBoolDriver {
+                                mAnimationNames: list[hash] = {
+                                    "Spell2"
+                                }
+                            }
+                            FixedDurationTriggeredBoolDriver {
+                                mCustomDuration: f32 = 1.5
+                                mBoolDriver: pointer = IsCastingBoolDriver {
+                                    SpellSlot: u32 = 7
+                               }
+                            }
+                        }                 
                     }
+                    
+                    
                 }
                 mChangeAnimationMidPlay: bool = true
                 #SyncFrameOnChangeAnim: bool = true
@@ -922,6 +934,90 @@ entries: map[hash,embed] = {
                     0
                     0
                     0
+                }
+            }
+            "GroundExcluded" = MaskData {
+                mWeightList: list[f32] = {
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    0
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
                 }
             }
             "UpperBody_ForDash" = MaskData {
