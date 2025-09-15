@@ -162,6 +162,7 @@ entries: map[hash,embed] = {
                     "Spell5_parametric"
                     "spell5_logic"
                     "Spell5_legs"
+                    "A4_Run_Jump"
                 }
             }      
             "Spell5_parametric" = ConditionBoolClipData {
@@ -197,6 +198,17 @@ entries: map[hash,embed] = {
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
                 }
+                # mEventDataMap: map[hash,pointer] = {
+                    # "StopE" = StopAnimationEventData {
+                        # #mEndFrame: f32 = 20
+                        # mStopAnimationName: hash = "Run"
+                    # }
+                    
+                    # "StopLegs" = StopAnimationEventData {
+                        # mStartFrame: f32 = 27.5
+                        # mStopAnimationName: hash = "spell5_legs"
+                    # }
+                # }
             }
             "Spell5_coreUB" = AtomicClipData {
                 mTrackDataName: hash = "actions"
@@ -400,16 +412,19 @@ entries: map[hash,embed] = {
                 Updater: pointer = LogicDriverBoolParametricUpdater {
                     driver: pointer = AllTrueMaterialDriver {
                         mDrivers: list[pointer] = {
-                            IsAnimationPlayingDynamicMaterialBoolDriver {
-                                mAnimationNames: list[hash] = {
-                                    "spell5_logic"
+                            DelayedBoolMaterialDriver {
+                                mBoolDriver: pointer = IsAnimationPlayingDynamicMaterialBoolDriver {
+                                    mAnimationNames: list[hash] = {
+                                        "spell5_logic"
+                                    }
                                 }
+                            mDelayOff: f32 = 5
                             }
                         }
                     }
                 }
                 mChangeAnimationMidPlay: bool = false
-                mTrueConditionClipName: hash = "A4_Jump"
+                mTrueConditionClipName: hash = "A4_Jump_core"
                 mFalseConditionClipName: hash = "A4_Emp"
             }
             
@@ -480,8 +495,10 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4_long.anm"
                 }
             }
-            "A4_Jump" = AtomicClipData {
-                mTrackDataName: hash = "Actions"
+            
+            "A4_Jump_Core" = AtomicClipData {
+                mTrackDataName: hash = "channel"
+                mMaskDataName: hash = "RootExcludedMask"
                 mEventDataMap: map[hash,pointer] = {
                     "Emp" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
@@ -493,9 +510,57 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
                     }
+                    # "StopLegss" = StopAnimationEventData {
+                        # #mEndFrame: f32 = 20
+                        # mStopAnimationName: hash = "Spell5_parametric"
+                    # }
+                    # "StopE" = StopAnimationEventData {
+                        # #mEndFrame: f32 = 20
+                        # mStopAnimationName: hash = "Spell5_parametric"
+                    # }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_Jump3.anm"
+                }
+            }
+            "A4_Run_Jump" = ConditionBoolClipData {
+                #mFlags: u32 = 5
+                #mTrackDataName: hash = "channel"
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer =  FixedDurationTriggeredBoolDriver {
+                        mCustomDuration: f32 = 1.5
+                        mBoolDriver: pointer = IsCastingBoolDriver {
+                            SpellSlot: u32 = 7
+                       }
+                    }
+                }
+                mChangeAnimationMidPlay: bool = true
+                #SyncFrameOnChangeAnim: bool = true
+                mPlayAnimChangeFromBeginning: bool = true
+                mTrueConditionClipName: hash = "Default_Level_A4_Jump_ForTiamat"
+                mFalseConditionClipName: hash = "spell5_logic"
+            }
+            "Default_Level_A4_Jump_ForTiamat" = AtomicClipData {
+                mTrackDataName: hash = "channel_below"
+                mMaskDataName: hash = "RootExcludedMask"
+
+                #mTickDuration: f32 = 0.034
+
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_Jump3.anm"
+                }
+                mUpdaterResourceData: pointer = UpdaterResourceData {
+                    mUpdaterDataList: list[embed] = {
+                        UpdaterData {
+                            Input: pointer = AttackSpeedParametricUpdater { }
+                            mOutputType: u32 = 1
+                            mValueProcessorDataList: list[pointer] = {
+                                LinearTransformProcessorData {
+                                    mMultiplier: f32 = 0.95
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "Default_Level_A4_ForTiamat" = AtomicClipData {
@@ -1248,20 +1313,23 @@ entries: map[hash,embed] = {
             "Channel" = TrackData {
                 mPriority: u8 = 0
             }
-            "Default" = TrackData {
-                mPriority: u8 = 4
-            }
-            "Actions" = TrackData { 
+            "Channel_below" = TrackData {
                 mPriority: u8 = 1
             }
-            "Spell" = TrackData { 
-                mPriority: u8 = 3
+            "Default" = TrackData {
+                mPriority: u8 = 5
             }
-            "Actions_below" = TrackData { 
+            "Actions" = TrackData { 
                 mPriority: u8 = 2
             }
+            "Spell" = TrackData { 
+                mPriority: u8 = 4
+            }
+            "Actions_below" = TrackData { 
+                mPriority: u8 = 3
+            }
             "nulll" = TrackData { 
-                mPriority: u8 = 5
+                mPriority: u8 = 6
             }
         }
         mBlendDataTable: map[u64,pointer] = {
