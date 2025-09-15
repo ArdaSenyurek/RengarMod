@@ -9185,7 +9185,7 @@ entries: map[hash,embed] = {
                 birthUvScrollRate: embed = ValueVector2 { constantValue: vec2 = { 0.0, -3.0 } }                       # p-uvscroll-rgb
 
                 pass: i16 = 0        # pass=2
-                blendMode: u8 = 1    # rendermode=1  (alpha blend)
+                blendMode: u8 = 3    # rendermode=1  (alpha blend)
             }
         }
         #"ASSETS/characters/rengar/skins/base/NewFXs/Rengar_Skin01_Z_WeaponTrail.tex"
