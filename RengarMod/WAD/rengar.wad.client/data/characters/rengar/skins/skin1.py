@@ -247,7 +247,7 @@ entries: map[hash,embed] = {
             "CameraTint" = "Characters/Rengar/Skins/Skin1/Particles/Rengar_CameraTint"
             "LPF" = "Characters/Rengar/Skins/Skin1/Particles/LPF"
 
-            "Q_Trail" = "Characters/Rengar/Skins/Skin1/Particles/Q_Trail"
+            #"Q_Trail" = "Characters/Rengar/Skins/Skin1/Particles/Q_Trail"
         }
     }
 }
