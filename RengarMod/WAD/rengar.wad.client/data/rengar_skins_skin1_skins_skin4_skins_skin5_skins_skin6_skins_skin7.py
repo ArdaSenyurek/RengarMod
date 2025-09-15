@@ -12253,7 +12253,7 @@ entries: map[hash,embed] = {
                 birthUvScrollRate: embed = ValueVector2 { constantValue: vec2 = { 0.0, -3.0 } }                       # p-uvscroll-rgb
 
                 pass: i16 = 0        # pass=2
-                blendMode: u8 = 0    # rendermode=1  (alpha blend)
+                blendMode: u8 = 4    # rendermode=1  (alpha blend)
             }
         }
         SoundOnCreateDefault: string = "Play_sfx_Leap_RengarQ_Stab"
