@@ -435,7 +435,7 @@ entries: map[hash,embed] = {
                             DelayedBoolMaterialDriver {
                                 mBoolDriver: pointer = IsAnimationPlayingDynamicMaterialBoolDriver {
                                     mAnimationNames: list[hash] = {
-                                        "spell5_logic"
+                                        "spell5_logic_AbsoluteNull"
                                     }
                                 }
                             mDelayOff: f32 = 0
@@ -478,7 +478,10 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
                     }
-                    
+                    "StopLeapLogic" = StopAnimationEventData {
+                        #mEndFrame: f32 = 20
+                        mStopAnimationName: hash = "spell5_logic_AbsoluteNull"
+                    }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4_long.anm"
@@ -509,6 +512,10 @@ entries: map[hash,embed] = {
                         mFireIfAnimationEndsEarly: bool = true
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
+                    }
+                    "StopLeapLogic" = StopAnimationEventData {
+                        #mEndFrame: f32 = 20
+                        mStopAnimationName: hash = "spell5_logic_AbsoluteNull"
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
