@@ -5789,7 +5789,7 @@ entries: map[hash,embed] = {
         complexEmitterDefinitionData: list[pointer] = {
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
-                    constantValue: f32 = 80
+                    constantValue: f32 = 180
                 }
                 particleLifetime: embed = ValueFloat {
                     constantValue: f32 = 0.75
@@ -5811,7 +5811,7 @@ entries: map[hash,embed] = {
                         mSimpleMeshName: string = "ASSETS/characters/rengar/skins/base/NewFXs/Rengar_Skin01_Z_WeaponTrail.sco"
                     }
                 }
-                blendMode: u8 = 1
+                #blendMode: u8 = 1
                 color: embed = ValueColor {
                     dynamics: pointer = VfxAnimatedColorVariableData {
                         times: list[f32] = {
@@ -5827,10 +5827,11 @@ entries: map[hash,embed] = {
                     }
                 }
                 disableBackfaceCull: bool = true
-                ScaleOverride: vec3 = {1.5, 1.5, 1.5}
+                #ScaleOverride: vec3 = {1.5, 1.5, 1.5}
                 isLocalOrientation: flag = true
                 particleIsLocalOrientation: flag = false
                 doesCastShadow: flag = false
+                blendMode: u8 = 0
                 birthRotation0: embed = ValueVector3 {
                     constantValue: vec3 = { 180, 90, -90 }
                     dynamics: pointer = VfxAnimatedVector3fVariableData {
@@ -5906,16 +5907,16 @@ entries: map[hash,embed] = {
             }
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
-                    constantValue: f32 = 80
+                    constantValue: f32 = 180
                 }
                 particleLifetime: embed = ValueFloat {
-                    constantValue: f32 = 0.75
+                    constantValue: f32 = 0.25
                 }
                 particleLinger: option[f32] = {
                     0
                 }
                 lifetime: option[f32] = {
-                    0.001
+                    0.15
                 }
                 emitterName: string = "SlashAdd_Hunter"
                 shape: embed = VfxShape {
@@ -5945,11 +5946,12 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
-                ScaleOverride: vec3 = {1.5, 1.5, 1.5}
+                #ScaleOverride: vec3 = {1.25, 1.25, 1.25}
                 disableBackfaceCull: bool = true
                 isLocalOrientation: flag = true
                 particleIsLocalOrientation: flag = false
                 doesCastShadow: flag = false
+                blendMode: u8 = 0
                 birthRotation0: embed = ValueVector3 {
                     constantValue: vec3 = { 180, 90, -90 }
                     dynamics: pointer = VfxAnimatedVector3fVariableData {
@@ -12331,7 +12333,7 @@ entries: map[hash,embed] = {
                 blendMode: u8 = 5 # 4 is add || 3 just overlaps(alpha val doesn't affect this) || 2 Turns it blue? tested with { 0.2,0.06,0.06, 1 }
                 # 1 overlaps
                 birthColor: embed = ValueColor {
-                    constantValue: vec4 = { 0.12, 0.001176470588, 0.001176470588, 0.25 }
+                    constantValue: vec4 = { 0.06, 0.001176470588, 0.001176470588, 0.125 }
                 }
                 color: embed = ValueColor {
                     dynamics: pointer = VfxAnimatedColorVariableData {
