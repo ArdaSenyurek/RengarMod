@@ -466,7 +466,7 @@ entries: map[hash,embed] = {
             }
             "A4_Normal" = AtomicClipData {
                 mTrackDataName: hash = "Actions"
-                #mTickDuration: f32 = 0.034
+                mTickDuration: f32 = 0.034
                 mEventDataMap: map[hash,pointer] = {
                     "Normal" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas"
@@ -490,7 +490,7 @@ entries: map[hash,embed] = {
                             mOutputType: u32 = 1
                             mValueProcessorDataList: list[pointer] = {
                                 LinearTransformProcessorData {
-                                    mMultiplier: f32 = 0.95
+                                    mMultiplier: f32 = 1
                                 }
                             }
                         }
@@ -614,7 +614,7 @@ entries: map[hash,embed] = {
                             mOutputType: u32 = 1
                             mValueProcessorDataList: list[pointer] = {
                                 LinearTransformProcessorData {
-                                    mMultiplier: f32 = 0.95
+                                    mMultiplier: f32 = 1
                                 }
                             }
                         }
