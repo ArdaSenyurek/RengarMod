@@ -163,6 +163,7 @@ entries: map[hash,embed] = {
                     "spell5_logic"
                     "Spell5_legs"
                     "A4_Run_Jump"
+                    "spell5_logic_AbsoluteNull"
                 }
             }      
             "Spell5_parametric" = ConditionBoolClipData {
@@ -238,6 +239,25 @@ entries: map[hash,embed] = {
             }
             "Spell5_logic" = AtomicClipData {
                 mTrackDataName: hash = "nulll"
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
+                }
+                mEventDataMap: map[hash,pointer] = {
+                    "R_leapOverride" = ParticleEventData {
+                        mName: hash = "Rengar_RLeap_Override"
+                        mStartFrame: f32 = 0
+                        mEffectKey: hash = "Rengar_RLeap_Override"
+                        mParticleEventDataPairList: list[embed] = {
+                            ParticleEventDataPair {}
+                        }
+                        mIsLoop: bool = true
+                        mIsKillEvent: bool = true
+                    }
+                }
+                EndFrame: f32 = 100
+            }
+            "spell5_logic_AbsoluteNull" = AtomicClipData {
+                mTrackDataName: hash = "AbsNull"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
                 }
@@ -418,7 +438,7 @@ entries: map[hash,embed] = {
                                         "spell5_logic"
                                     }
                                 }
-                            mDelayOff: f32 = 5
+                            mDelayOff: f32 = 0
                             }
                         }
                     }
@@ -498,7 +518,7 @@ entries: map[hash,embed] = {
             
             "A4_Jump_Core" = AtomicClipData {
                 mTrackDataName: hash = "channel"
-                mMaskDataName: hash = "RootExcludedMask"
+                #mMaskDataName: hash = "RootExcludedMask"
                 mEventDataMap: map[hash,pointer] = {
                     "Emp" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
@@ -522,13 +542,27 @@ entries: map[hash,embed] = {
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_Jump3.anm"
                 }
+                mUpdaterResourceData: pointer = UpdaterResourceData {
+                    mUpdaterDataList: list[embed] = {
+                        UpdaterData {
+                            Input: pointer = AttackSpeedParametricUpdater { }
+                            mOutputType: u32 = 1
+                            mValueProcessorDataList: list[pointer] = {
+                                LinearTransformProcessorData {
+                                    mMultiplier: f32 = 0
+                                    mIncrement: f32 = 3.8
+                                }
+                            }
+                        }
+                    }
+                }
             }
             "A4_Run_Jump" = ConditionBoolClipData {
                 #mFlags: u32 = 5
                 #mTrackDataName: hash = "channel"
                 Updater: pointer = LogicDriverBoolParametricUpdater {
                     driver: pointer =  FixedDurationTriggeredBoolDriver {
-                        mCustomDuration: f32 = 1.5
+                        mCustomDuration: f32 = 0.5
                         mBoolDriver: pointer = IsCastingBoolDriver {
                             SpellSlot: u32 = 7
                        }
@@ -537,12 +571,13 @@ entries: map[hash,embed] = {
                 mChangeAnimationMidPlay: bool = true
                 #SyncFrameOnChangeAnim: bool = true
                 mPlayAnimChangeFromBeginning: bool = true
+                DontStompTransitionClip: bool = true
                 mTrueConditionClipName: hash = "Default_Level_A4_Jump_ForTiamat"
-                mFalseConditionClipName: hash = "spell5_logic"
+                mFalseConditionClipName: hash = "spell5_logic_AbsoluteNull"
             }
             "Default_Level_A4_Jump_ForTiamat" = AtomicClipData {
                 mTrackDataName: hash = "channel_below"
-                mMaskDataName: hash = "RootExcludedMask"
+                mMaskDataName: hash = "UpperBody"
 
                 #mTickDuration: f32 = 0.034
 
@@ -556,7 +591,8 @@ entries: map[hash,embed] = {
                             mOutputType: u32 = 1
                             mValueProcessorDataList: list[pointer] = {
                                 LinearTransformProcessorData {
-                                    mMultiplier: f32 = 0.95
+                                    mMultiplier: f32 = 0
+                                    mIncrement: f32 = 3.8
                                 }
                             }
                         }
@@ -1331,8 +1367,16 @@ entries: map[hash,embed] = {
             "nulll" = TrackData { 
                 mPriority: u8 = 6
             }
+            "AbsNull" = TrackData { 
+                mPriority: u8 = 7
+            }
         }
         mBlendDataTable: map[u64,pointer] = {
+            4930726027702189345 = TimeBlendData {
+            mTime: f32 = 0.2
+            }
+        
+        
             7794375146876298347 = TimeBlendData {
             mTime: f32 = 0
             }
