@@ -190,6 +190,35 @@ entries: map[hash,embed] = {
                 }
             }
             
+            PersistentEffectConditionData {
+                OwnerCondition: pointer = AllTrueMaterialDriver {
+                        mDrivers: list[pointer] = {
+                            IsAnimationPlayingDynamicMaterialBoolDriver {
+                                mAnimationNames: list[hash] = {
+                                    "Spell5_logic"
+                                }
+                            }
+                            FloatComparisonMaterialDriver {
+                                mOperator: u32 = 2
+                                mValueA: pointer = FloatLiteralMaterialDriver {
+                                    mValue: f32 = 0.285
+                                }
+                                mValueB: pointer = AnimationFractionDynamicMaterialFloatDriver {
+                                    mAnimationName: hash = "spell5_logic"
+                                }
+                            }
+                        }                 
+                    }                 
+               
+               PersistentVfxs: list2[embed] = {
+                    PersistentVfxData {
+                        #BoneName: string = "weapon"
+                        effectKey: hash = "Rengar_RLeap_Override"
+                        ShowToOwnerOnly: bool = false
+                    }
+                }
+            }
+            
         }
     }
     "Characters/Rengar/Skins/Skin1/Resources" = ResourceResolver {

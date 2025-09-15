@@ -222,19 +222,27 @@ entries: map[hash,embed] = {
                         #mEndFrame: f32 = 20
                         mStopAnimationName: hash = "spell3"
                     }
-                    "R_leapOverride" = ParticleEventData {
-                        mName: hash = "Rengar_RLeap_Override"
-                        mEffectKey: hash = "Rengar_RLeap_Override"
-                        mParticleEventDataPairList: list[embed] = {
-                            ParticleEventDataPair {}
-                        }
-                        mIsLoop: bool = true
-                        mIsKillEvent: bool = true
-                    }
+                    # "R_leapOverride" = ParticleEventData {
+                        # mName: hash = "Rengar_RLeap_Override"
+                        # mEffectKey: hash = "Rengar_RLeap_Override"
+                        # mParticleEventDataPairList: list[embed] = {
+                            # ParticleEventDataPair {}
+                        # }
+                        # mIsLoop: bool = true
+                        # mIsKillEvent: bool = true
+                    # }
                     "StopLegs" = StopAnimationEventData {
                         mStartFrame: f32 = 27.5
                         mStopAnimationName: hash = "spell5_legs"
                     }
+                    "LockSpell3" = LockRootOrientationEventData {
+                        JointName: hash = "root"
+                        mEndFrame: f32 = 28.5
+                    }
+                    # "stopRun2" = StopAnimationEventData {
+                        # #mStartFrame: f32 = 27.5
+                        # mStopAnimationName: hash = "Run2"
+                    # }
                 }
             }
             "Spell5_logic" = AtomicClipData {
@@ -243,16 +251,16 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
                 }
                 mEventDataMap: map[hash,pointer] = {
-                    "R_leapOverride" = ParticleEventData {
-                        mName: hash = "Rengar_RLeap_Override"
-                        mStartFrame: f32 = 0
-                        mEffectKey: hash = "Rengar_RLeap_Override"
-                        mParticleEventDataPairList: list[embed] = {
-                            ParticleEventDataPair {}
-                        }
-                        mIsLoop: bool = true
-                        mIsKillEvent: bool = true
-                    }
+                    # "R_leapOverride" = ParticleEventData {
+                        # mName: hash = "Rengar_RLeap_Override"
+                        # mStartFrame: f32 = 0
+                        # mEffectKey: hash = "Rengar_RLeap_Override"
+                        # mParticleEventDataPairList: list[embed] = {
+                            # ParticleEventDataPair {}
+                        # }
+                        # mIsLoop: bool = true
+                        # mIsKillEvent: bool = true
+                    # }
                 }
                 EndFrame: f32 = 100
             }
@@ -262,16 +270,16 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
                 }
                 mEventDataMap: map[hash,pointer] = {
-                    "R_leapOverride" = ParticleEventData {
-                        mName: hash = "Rengar_RLeap_Override"
-                        mStartFrame: f32 = 0
-                        mEffectKey: hash = "Rengar_RLeap_Override"
-                        mParticleEventDataPairList: list[embed] = {
-                            ParticleEventDataPair {}
-                        }
-                        mIsLoop: bool = true
-                        mIsKillEvent: bool = true
-                    }
+                    # "R_leapOverride" = ParticleEventData {
+                        # mName: hash = "Rengar_RLeap_Override"
+                        # mStartFrame: f32 = 0
+                        # mEffectKey: hash = "Rengar_RLeap_Override"
+                        # mParticleEventDataPairList: list[embed] = {
+                            # ParticleEventDataPair {}
+                        # }
+                        # mIsLoop: bool = true
+                        # mIsKillEvent: bool = true
+                    # }
                 }
                 EndFrame: f32 = 100
             }
@@ -438,7 +446,7 @@ entries: map[hash,embed] = {
                                         "spell5_logic_AbsoluteNull"
                                     }
                                 }
-                            mDelayOff: f32 = 0
+                                mDelayOff: f32 = 0
                             }
                         }
                     }
