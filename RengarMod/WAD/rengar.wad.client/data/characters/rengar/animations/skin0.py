@@ -406,6 +406,20 @@ entries: map[hash,embed] = {
                     0x6208af50
                 }
             }
+             0x602b063d = AtomicClipData {
+                mFlags: u32 = 8
+                mTrackDataName: hash = "actions"
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_recall.anm"
+                }
+            }
+            0x6208af50 = AtomicClipData {
+                mFlags: u32 = 2
+                mTrackDataName: hash = "actions"
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_recall_idle.anm"
+                }
+            }
             "Joke" = AtomicClipData {
                 mTrackDataName: hash = "Default"
                 mEventDataMap: map[hash,pointer] = {
