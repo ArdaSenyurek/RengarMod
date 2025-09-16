@@ -47,7 +47,6 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = false
                     }
                     "StopW" = StopAnimationEventData {
-                        #mEndFrame: f32 = 20
                         mStopAnimationName: hash = "spell2"
                     }
                 }
@@ -87,7 +86,6 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = false
                     }
                     "StopW" = StopAnimationEventData {
-                        #mEndFrame: f32 = 20
                         mStopAnimationName: hash = "spell2"
                     }
                     
@@ -199,17 +197,6 @@ entries: map[hash,embed] = {
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
                 }
-                # mEventDataMap: map[hash,pointer] = {
-                    # "StopE" = StopAnimationEventData {
-                        # #mEndFrame: f32 = 20
-                        # mStopAnimationName: hash = "Run"
-                    # }
-                    
-                    # "StopLegs" = StopAnimationEventData {
-                        # mStartFrame: f32 = 27.5
-                        # mStopAnimationName: hash = "spell5_legs"
-                    # }
-                # }
             }
             "Spell5_coreUB" = AtomicClipData {
                 mTrackDataName: hash = "actions"
@@ -219,30 +206,16 @@ entries: map[hash,embed] = {
                 }
                 mEventDataMap: map[hash,pointer] = {
                     "StopE" = StopAnimationEventData {
-                        #mEndFrame: f32 = 20
                         mStopAnimationName: hash = "spell3"
                     }
-                    # "R_leapOverride" = ParticleEventData {
-                        # mName: hash = "Rengar_RLeap_Override"
-                        # mEffectKey: hash = "Rengar_RLeap_Override"
-                        # mParticleEventDataPairList: list[embed] = {
-                            # ParticleEventDataPair {}
-                        # }
-                        # mIsLoop: bool = true
-                        # mIsKillEvent: bool = true
-                    # }
                     "StopLegs" = StopAnimationEventData {
                         mStartFrame: f32 = 27.5
                         mStopAnimationName: hash = "spell5_legs"
                     }
                     "LockSpell3" = LockRootOrientationEventData {
                         JointName: hash = "root"
-                        mEndFrame: f32 = 28.5
+                        mEndFrame: f32 = 20.5
                     }
-                    # "stopRun2" = StopAnimationEventData {
-                        # #mStartFrame: f32 = 27.5
-                        # mStopAnimationName: hash = "Run2"
-                    # }
                 }
             }
             "Spell5_logic" = AtomicClipData {
@@ -250,36 +223,12 @@ entries: map[hash,embed] = {
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
                 }
-                mEventDataMap: map[hash,pointer] = {
-                    # "R_leapOverride" = ParticleEventData {
-                        # mName: hash = "Rengar_RLeap_Override"
-                        # mStartFrame: f32 = 0
-                        # mEffectKey: hash = "Rengar_RLeap_Override"
-                        # mParticleEventDataPairList: list[embed] = {
-                            # ParticleEventDataPair {}
-                        # }
-                        # mIsLoop: bool = true
-                        # mIsKillEvent: bool = true
-                    # }
-                }
                 EndFrame: f32 = 100
             }
             "spell5_logic_AbsoluteNull" = AtomicClipData {
                 mTrackDataName: hash = "AbsNull"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
-                }
-                mEventDataMap: map[hash,pointer] = {
-                    # "R_leapOverride" = ParticleEventData {
-                        # mName: hash = "Rengar_RLeap_Override"
-                        # mStartFrame: f32 = 0
-                        # mEffectKey: hash = "Rengar_RLeap_Override"
-                        # mParticleEventDataPairList: list[embed] = {
-                            # ParticleEventDataPair {}
-                        # }
-                        # mIsLoop: bool = true
-                        # mIsKillEvent: bool = true
-                    # }
                 }
                 EndFrame: f32 = 100
             }
@@ -291,7 +240,6 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = false
                     }
                     "StopW" = StopAnimationEventData {
-                        #mEndFrame: f32 = 20
                         mStopAnimationName: hash = "spell2"
                     }
                 }
@@ -320,7 +268,6 @@ entries: map[hash,embed] = {
             }
             "Attack2" = AtomicClipData {
                 mTrackDataName: hash = "Actions"
-                #mMaskDataName: hash = "UpperBody"
                 mEventDataMap: map[hash,pointer] = {
                     0xb6b7e1da = ParticleEventData {
                         mName: hash = 0xb6b7e1da
@@ -370,7 +317,6 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = false
                     }
                     "StopW" = StopAnimationEventData {
-                        #mEndFrame: f32 = 20
                         mStopAnimationName: hash = "spell2"
                     }
                     
@@ -378,22 +324,6 @@ entries: map[hash,embed] = {
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Joke.anm"
                 }
-            }
-            "Runasdasd" = ConditionBoolClipData {
-                mFlags: u32 = 5
-                Updater: pointer = LogicDriverBoolParametricUpdater {
-                    driver: pointer =  FixedDurationTriggeredBoolDriver {
-                        mCustomDuration: f32 = 0.5
-                        mBoolDriver: pointer = IsCastingBoolDriver {
-                            SpellSlot: u32 = 7
-                       }
-                    }
-                }
-                mChangeAnimationMidPlay: bool = true
-                #SyncFrameOnChangeAnim: bool = true
-                mPlayAnimChangeFromBeginning: bool = true
-                mTrueConditionClipName: hash = "Idle_ExtensionForTiamat"
-                mFalseConditionClipName: hash = "Run_core"
             }
             "Run" = AtomicClipData {
                 mFlags: u32 = 2
@@ -487,7 +417,6 @@ entries: map[hash,embed] = {
                         mIsKillEvent: bool = false
                     }
                     "StopLeapLogic" = StopAnimationEventData {
-                        #mEndFrame: f32 = 20
                         mStopAnimationName: hash = "spell5_logic_AbsoluteNull"
                     }
                 }
@@ -522,7 +451,6 @@ entries: map[hash,embed] = {
                         mIsKillEvent: bool = false
                     }
                     "StopLeapLogic" = StopAnimationEventData {
-                        #mEndFrame: f32 = 20
                         mStopAnimationName: hash = "spell5_logic_AbsoluteNull"
                     }
                 }
@@ -545,14 +473,6 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
                     }
-                    # "StopLegss" = StopAnimationEventData {
-                        # #mEndFrame: f32 = 20
-                        # mStopAnimationName: hash = "Spell5_parametric"
-                    # }
-                    # "StopE" = StopAnimationEventData {
-                        # #mEndFrame: f32 = 20
-                        # mStopAnimationName: hash = "Spell5_parametric"
-                    # }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_Jump3.anm"
@@ -573,8 +493,6 @@ entries: map[hash,embed] = {
                 }
             }
             "A4_Run_Jump" = ConditionBoolClipData {
-                #mFlags: u32 = 5
-                #mTrackDataName: hash = "channel"
                 Updater: pointer = LogicDriverBoolParametricUpdater {
                     driver: pointer =  FixedDurationTriggeredBoolDriver {
                         mCustomDuration: f32 = 0.5
@@ -584,7 +502,6 @@ entries: map[hash,embed] = {
                     }
                 }
                 mChangeAnimationMidPlay: bool = true
-                #SyncFrameOnChangeAnim: bool = true
                 mPlayAnimChangeFromBeginning: bool = true
                 DontStompTransitionClip: bool = true
                 mTrueConditionClipName: hash = "Default_Level_A4_Jump_ForTiamat"
@@ -594,7 +511,6 @@ entries: map[hash,embed] = {
                 mTrackDataName: hash = "channel_below"
                 mMaskDataName: hash = "UpperBody"
 
-                #mTickDuration: f32 = 0.034
 
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_Jump3.anm"
@@ -637,7 +553,6 @@ entries: map[hash,embed] = {
                 }
             }
             "Idle_ExtensionForTiamat" = SequencerClipData {
-                #mFlags: u32 = 2
                 mClipNameList: list[hash] = {
                     "Default_Level_A4_ForTiamat"
                     "Idle1_Base"
@@ -666,7 +581,6 @@ entries: map[hash,embed] = {
                     
                 }
                 mChangeAnimationMidPlay: bool = true
-                #SyncFrameOnChangeAnim: bool = true
                 mPlayAnimChangeFromBeginning: bool = true
                 mTrueConditionClipName: hash = "Idle_ExtensionForTiamat"
                 mFalseConditionClipName: hash = "Idle1_Prob"
