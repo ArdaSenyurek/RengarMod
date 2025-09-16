@@ -370,13 +370,11 @@ entries: map[hash,embed] = {
                 Updater: pointer = LogicDriverBoolParametricUpdater {
                     driver: pointer = AllTrueMaterialDriver {
                         mDrivers: list[pointer] = {
-                            DelayedBoolMaterialDriver {
-                                mBoolDriver: pointer = IsAnimationPlayingDynamicMaterialBoolDriver {
+                            
+                                IsAnimationPlayingDynamicMaterialBoolDriver {
                                     mAnimationNames: list[hash] = {
                                         "spell5_logic_AbsoluteNull"
                                     }
-                                }
-                                mDelayOff: f32 = 0
                             }
                         }
                     }
