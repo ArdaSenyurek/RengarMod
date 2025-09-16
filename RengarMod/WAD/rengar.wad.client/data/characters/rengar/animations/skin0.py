@@ -536,13 +536,21 @@ entries: map[hash,embed] = {
                 mEventDataMap: map[hash,pointer] = {
                     "Normal" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas"
-                        mStartFrame: f32 = 4
+                        mStartFrame: f32 = 7
                         mParticleEventDataPairList: list[embed] = {
                             ParticleEventDataPair {}
                         }
                         mFireIfAnimationEndsEarly: bool = true
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
+                    }
+                    "NQ_SFX" = SoundEventData {
+                        mSoundName: string = "Play_sfx_Leap_RengarQ_Stab"
+                        mIsLoop: bool = false
+                        mStartFrame: f32 = 4
+                        mFireIfAnimationEndsEarly: bool = true
+                        mIsKillEvent:bool = false
+                        mSkipIfPastEndFrame: bool = false
                     }
                     "StopLeapLogic" = StopAnimationEventData {
                         mStopAnimationName: hash = "spell5_logic_AbsoluteNull"
@@ -570,13 +578,21 @@ entries: map[hash,embed] = {
                 mEventDataMap: map[hash,pointer] = {
                     "Emp" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
-                        mStartFrame: f32 = 4
+                        mStartFrame: f32 = 7
                         mParticleEventDataPairList: list[embed] = {
                             ParticleEventDataPair {}
                         }
                         mFireIfAnimationEndsEarly: bool = true
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
+                    }
+                    "NQ_SFX" = SoundEventData {
+                        mSoundName: string = "Play_sfx_Leap_RengarQ_Stab"
+                        mIsLoop: bool = false
+                        mStartFrame: f32 = 4
+                        mFireIfAnimationEndsEarly: bool = true
+                        mIsKillEvent:bool = false
+                        mSkipIfPastEndFrame: bool = false
                     }
                     "StopLeapLogic" = StopAnimationEventData {
                         mStopAnimationName: hash = "spell5_logic_AbsoluteNull"
@@ -592,13 +608,21 @@ entries: map[hash,embed] = {
                 mEventDataMap: map[hash,pointer] = {
                     "Emp" = ParticleEventData {
                         mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
-                        mStartFrame: f32 = 4
+                        mStartFrame: f32 = 7
                         mParticleEventDataPairList: list[embed] = {
                             ParticleEventDataPair {}
                         }
                         mFireIfAnimationEndsEarly: bool = true
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
+                    }
+                    "NQ_SFX" = SoundEventData {
+                        mSoundName: string = "Play_sfx_Leap_RengarQ_Stab"
+                        mIsLoop: bool = false
+                        mStartFrame: f32 = 4
+                        mFireIfAnimationEndsEarly: bool = true
+                        mIsKillEvent:bool = false
+                        mSkipIfPastEndFrame: bool = false
                     }
                 }
                 mAnimationResourceData: embed = AnimationResourceData {

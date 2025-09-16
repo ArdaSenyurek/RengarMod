@@ -9194,7 +9194,7 @@ entries: map[hash,embed] = {
         #"ASSETS/characters/rengar/skins/base/NewFXs/Rengar_Skin01_Q_WeaponTrail.sco"
         particleName: string = "Rengar_Skin01_Q_Cas"
         particlePath: string = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas"
-        SoundOnCreateDefault: string = "Play_sfx_Leap_RengarQ_Stab"
+        #SoundOnCreateDefault: string = "Play_sfx_Leap_RengarQ_Stab"
         flags: u16 = 198
     }
     "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_W_Max_Buf" = VfxSystemDefinitionData {
@@ -10649,7 +10649,7 @@ entries: map[hash,embed] = {
             }
             VfxEmitterDefinitionData {
                 rate: embed = ValueFloat {
-                    constantValue: f32 = 80
+                    constantValue: f32 = 120
                 }
                 particleLifetime: embed = ValueFloat {
                     constantValue: f32 = 0.75
@@ -10689,8 +10689,9 @@ entries: map[hash,embed] = {
                         }
                     }
                 }
+                RotationOverride: vec3 = {0, 90, 0}
                 disableBackfaceCull: bool = true
-                isLocalOrientation: flag = true
+                isLocalOrientation: flag = false
                 particleIsLocalOrientation: flag = false
                 doesCastShadow: flag = false
                 birthRotation0: embed = ValueVector3 {
@@ -10763,7 +10764,7 @@ entries: map[hash,embed] = {
                     orientation: u8 = 1
                 }
                 birthUvScrollRate: embed = ValueVector2 {
-                    constantValue: vec2 = { 0, -1.5 }
+                    constantValue: vec2 = { 0, -2 }
                 }
             }
             VfxEmitterDefinitionData {
@@ -10808,7 +10809,7 @@ entries: map[hash,embed] = {
                     }
                 }
                 disableBackfaceCull: bool = true
-                isLocalOrientation: flag = true
+                isLocalOrientation: flag = false
                 particleIsLocalOrientation: flag = false
                 doesCastShadow: flag = false
                 birthRotation0: embed = ValueVector3 {
@@ -10822,8 +10823,8 @@ entries: map[hash,embed] = {
                                     1
                                 }
                                 keyValues: list[f32] = {
-                                    1
-                                    -1
+                                    2
+                                    -2
                                 }
                             }
                             VfxProbabilityTableData {}
@@ -10850,7 +10851,7 @@ entries: map[hash,embed] = {
                     orientation: u8 = 1
                 }
                 birthUvScrollRate: embed = ValueVector2 {
-                    constantValue: vec2 = { 0, -1.5 }
+                    constantValue: vec2 = { 0, -2 }
                 }
             }
             # Darius Blood
@@ -12258,7 +12259,7 @@ entries: map[hash,embed] = {
                 blendMode: u8 = 4    # rendermode=1  (alpha blend)
             }
         }
-        SoundOnCreateDefault: string = "Play_sfx_Leap_RengarQ_Stab"
+        #SoundOnCreateDefault: string = "Play_sfx_Leap_RengarQ_Stab"
         particleName: string = "Rengar_Skin01_Q_Cas_Max_MyWay"
         particlePath: string = "Characters/Rengar/Skins/Skin1/Particles/Rengar_Skin01_Q_Cas_Max_MyWay"
         flags: u16 = 198
