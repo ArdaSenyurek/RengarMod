@@ -1,5 +1,5 @@
-# Season 4 Rengar Mod  
-A mod that lets you play Rengar in his **Season 4** form. SFXs by Ryo Majufuri.
+# Season 4 Rengar Mod
+A mod by _Arda Şenyürek_ & _Luka Brkic_ that lets you play Rengar in his **Season 4** form.
 
 ---
 
