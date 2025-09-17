@@ -1211,18 +1211,18 @@ entries: map[hash,embed] = {
                     0
                     0
                     0
-                    0
+                    1
                     1 # Ground
                     1
-                    0
-                    0
                     1
                     1
                     1
-                    0
                     1
                     1
-                    0
+                    1
+                    1
+                    1
+                    1
                 }
             }
             "UpperBody" = MaskData {
