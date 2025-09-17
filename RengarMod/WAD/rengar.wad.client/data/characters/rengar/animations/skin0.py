@@ -406,7 +406,7 @@ entries: map[hash,embed] = {
                     0x6208af50
                 }
             }
-             0x602b063d = AtomicClipData {
+            0x602b063d = AtomicClipData {
                 mFlags: u32 = 8
                 mTrackDataName: hash = "actions"
                 mAnimationResourceData: embed = AnimationResourceData {
