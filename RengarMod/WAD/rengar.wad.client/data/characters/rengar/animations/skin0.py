@@ -500,19 +500,30 @@ entries: map[hash,embed] = {
             }
             "Attack4_DuringJump" = ConditionBoolClipData {
                 Updater: pointer = LogicDriverBoolParametricUpdater {
-                    driver: pointer = OneTrueMaterialDriver {
+                    driver: pointer = AllTrueMaterialDriver {
                         mDrivers: list[pointer] = {
                             IsAnimationPlayingDynamicMaterialBoolDriver {
                                 mAnimationNames: list[hash] = {
-                                    "Spell5_logic_NH"
+                                    "Spell5_logic"
                                 }
                             }
+                            
+                            FloatComparisonMaterialDriver {
+                                mOperator: u32 = 2
+                                mValueA: pointer = FloatLiteralMaterialDriver {
+                                    mValue: f32 = 0.17
+                                }
+                                mValueB: pointer = AnimationFractionDynamicMaterialFloatDriver {
+                                    mAnimationName: hash = "spell5_logic"
+                                }
+                            }
+                            
                         }
                     }
                 }
                 mChangeAnimationMidPlay: bool = false
-                mTrueConditionClipName: hash = "A4_Emp"
-                mFalseConditionClipName: hash = "A4_Jump_Core"
+                mFalseConditionClipName: hash = "A4_Emp"
+                mTrueConditionClipName: hash = "A4_Jump_Core"
             }
             #----- Normal Q 
             "Attack4_land" = ConditionBoolClipData {
