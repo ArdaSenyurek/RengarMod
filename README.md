@@ -7,7 +7,7 @@ A mod by _Arda Şenyürek_ & _Luka Brkic_ that lets you play Rengar in his **Sea
 
 1. Install **csLol**.  
 2. Add the mod:
-   - Download the [ZIP](https://github.com/ArdaSenyurek/RengarMod/releases/tag/v1.0.0) from release.
+   - Download the latest version from **releases** page.
    - Click the **Import ZIP** in **csLol**.
 4. Make sure to **enable** the following options in **csLol** settings:
 - Automatically detect game path  
