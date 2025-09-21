@@ -52,7 +52,7 @@ entries: map[hash,embed] = {
                 }
             }
             "death" = AtomicClipData {
-                mTrackDataName: hash = "Recall"
+                mTrackDataName: hash = "Actions"
                 mEventDataMap: map[hash,pointer] = {
                     "Audio_Death" = SoundEventData {
                         mSoundName: string = "Play_sfx_Rengar_Death3D_cast"
@@ -104,7 +104,19 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Skin02/Rengar_skin02_run1.anm"
                 }
             }
-            "Run2" = AtomicClipData {
+            "Run2" = ConditionBoolClipData {
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer = HasBuffDynamicMaterialBoolDriver {
+                        mScriptName: string = "RengarPassiveBuff"
+                    }
+                }
+                mChangeAnimationMidPlay: bool = true
+                DontStompTransitionClip: bool = true
+                SyncFrameOnChangeAnim: bool = true
+                mTrueConditionClipName: hash = "Run2_Core"
+                mFalseConditionClipName: hash = "Run1_Fast"
+            }
+            "Run2_Core" = AtomicClipData {
                 mFlags: u32 = 2
                 mTrackDataName: hash = "Default"
                 mEventDataMap: map[hash,pointer] = {
@@ -136,48 +148,492 @@ entries: map[hash,embed] = {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell1.anm"
                 }
             }
-            "Spell2" = ConditionBoolClipData {
-                Updater: pointer = IsMovingParametricUpdater {}
-                mChangeAnimationMidPlay: bool = true
-                mTrueConditionClipName: hash = "Spell2_Run"
-                mFalseConditionClipName: hash = "Spell2_Idle"
+            "Spell2" =  AtomicClipData {
+                mTrackDataName: hash = "Spell"
+                mMaskDataName: hash = "UpperBody"
+                mTickDuration: f32 = 0.0333333
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
+                }
+                mEventDataMap: map[hash,pointer] = {
+                    0x26a07077 = ConformToPathEventData {
+                        mMaskDataName: hash = 0x26a07077
+                        mBlendInTime: f32 = 0.1
+                        mBlendOutTime: f32 = 0.2
+                    }
+                }
             }
             "Spell3" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Actions"
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell3.anm"
                 }
             }
-            "Spell4" = AtomicClipData {
-                mTrackDataName: hash = "Default"
-                mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+            "Spell5" = ConditionBoolClipData {
+                #mTrackDataName: hash = "actions"
+                Updater: pointer = LogicDriverBoolParametricUpdater {                     
+                    driver: pointer =  FixedDurationTriggeredBoolDriver {
+                            mBoolDriver: pointer = HasBuffDynamicMaterialBoolDriver {
+                                mScriptName: string = "RengarR"
+                            }
+                            mCustomDuration: f32 = 0.5
+                        }
+                }
+                mChangeAnimationMidPlay: bool = false
+                mFalseConditionClipName: hash = "spell5_NH"
+                mTrueConditionClipName: hash = "spell5_Ult"
+            }
+            
+            "spell5_NH" = ParallelClipData {
+                mClipNameList: list[hash] = {
+                    "Spell5_parametric_NH"
+                    "Spell5_logic_NH"
+                    "Spell5_legs_NH"
+                    "A4_Run_Jump_NH"
+                    "spell5_logic_AbsoluteNull_NH"
+                }
+            }  
+            "spell5_Ult" = ParallelClipData {
+                mClipNameList: list[hash] = {
+                    "Spell5_parametric"
+                    "spell5_logic"
+                    "Spell5_legs"
+                    "A4_Run_Jump"
+                    "spell5_logic_AbsoluteNull"
                 }
             }
-            "Spell4_Loop" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+            
+            "Spell5_parametric_NH" = ConditionBoolClipData {
+                mTrackDataName: hash = "actions"
+                Updater: pointer = LogicDriverBoolParametricUpdater {                     
+                    driver: pointer =  AllTrueMaterialDriver {
+                        mDrivers: list[pointer] = {
+                            IsAnimationPlayingDynamicMaterialBoolDriver {
+                                mAnimationNames: list[hash] = {
+                                    "Spell2"
+                                }
+                            }
+                            FloatComparisonMaterialDriver {
+                                mOperator: u32 = 2
+                                mValueB: pointer = FloatLiteralMaterialDriver {
+                                    mValue: f32 = 0.285
+                                }
+                                mValueA: pointer = AnimationFractionDynamicMaterialFloatDriver {
+                                    mAnimationName: hash = "spell5_logic"
+                                }
+                            }
+                        }                 
+                    }
+                }
+                mPlayAnimChangeFromBeginning: bool = true
+                mChangeAnimationMidPlay: bool = true
+                mFalseConditionClipName: hash = "Spell5_coreUB_NH"
+                mTrueConditionClipName: hash = "Spell2"
+            }
+            "Spell5_parametric" = ConditionBoolClipData {
+                mTrackDataName: hash = "actions"
+                Updater: pointer = LogicDriverBoolParametricUpdater {                     
+                    driver: pointer =  AllTrueMaterialDriver {
+                        mDrivers: list[pointer] = {
+                            IsAnimationPlayingDynamicMaterialBoolDriver {
+                                mAnimationNames: list[hash] = {
+                                    "Spell2"
+                                }
+                            }
+                            FloatComparisonMaterialDriver {
+                                mOperator: u32 = 2
+                                mValueB: pointer = FloatLiteralMaterialDriver {
+                                    mValue: f32 = 0.285
+                                }
+                                mValueA: pointer = AnimationFractionDynamicMaterialFloatDriver {
+                                    mAnimationName: hash = "spell5_logic"
+                                }
+                            }
+                        }                 
+                    }
+                }
+                mPlayAnimChangeFromBeginning: bool = true
+                mChangeAnimationMidPlay: bool = true
+                mFalseConditionClipName: hash = "Spell5_coreUB"
+                mTrueConditionClipName: hash = "Spell2"
+            }
+            
+            
+            "Spell5_legs_NH" = AtomicClipData {
+                mTrackDataName: hash = "Actions_below"
+                mMaskDataName: hash = "Legs"
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/animations/Rengar_dash_S4.anm"
                 }
             }
-            "Spell4_Winddown" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+            "Spell5_coreUB_NH" = AtomicClipData {
+                mTrackDataName: hash = "actions"
+                mMaskDataName: hash = "UpperBody_ForDash"
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/animations/Rengar_dash_S4.anm"
+                }
+                mEventDataMap: map[hash,pointer] = {
+                    "StopE" = StopAnimationEventData {
+                        mStopAnimationName: hash = "spell3"
+                    }
+                    "StopLegs" = StopAnimationEventData {
+                        mStartFrame: f32 = 27.5
+                        mStopAnimationName: hash = "Spell5_legs_NH"
+                    }
+                    "LockSpell3" = LockRootOrientationEventData {
+                        JointName: hash = "root"
+                        mEndFrame: f32 = 20.5
+                    }
                 }
             }
-            "Spell5" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+            "Spell5_logic_NH" = AtomicClipData {
+                mTrackDataName: hash = "nulll"
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_dash1.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/animations/Rengar_dash_S4.anm"
+                }
+                EndFrame: f32 = 100
+            }
+            "spell5_logic_AbsoluteNull_NH" = AtomicClipData {
+                mTrackDataName: hash = "AbsNull"
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/animations/Rengar_dash_S4.anm"
+                }
+                EndFrame: f32 = 100
+            }
+            
+            "Spell5_legs" = AtomicClipData {
+                mTrackDataName: hash = "Actions_below"
+                mMaskDataName: hash = "Legs"
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
                 }
             }
-            "Spell6" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+            "Spell5_coreUB" = AtomicClipData {
+                mTrackDataName: hash = "actions"
+                mMaskDataName: hash = "UpperBody_ForDash"
                 mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_Idle1.anm"
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
+                }
+                mEventDataMap: map[hash,pointer] = {
+                    "StopE" = StopAnimationEventData {
+                        mStopAnimationName: hash = "spell3"
+                    }
+                    "StopLegs" = StopAnimationEventData {
+                        mStartFrame: f32 = 27.5
+                        mStopAnimationName: hash = "spell5_legs"
+                    }
+                    "LockSpell3" = LockRootOrientationEventData {
+                        JointName: hash = "root"
+                        mEndFrame: f32 = 20.5
+                    }
                 }
             }
+            "Spell5_logic" = AtomicClipData {
+                mTrackDataName: hash = "nulll"
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
+                }
+                EndFrame: f32 = 100
+            }
+            "spell5_logic_AbsoluteNull" = AtomicClipData {
+                mTrackDataName: hash = "AbsNull"
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/dash3.anm"
+                }
+                EndFrame: f32 = 100
+            }
+            
+            "Attack4" = ConditionBoolClipData {
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer = AllTrueMaterialDriver {
+                        mDrivers: list[pointer] = {
+                            IsAttackingBoolDriver {}
+                        }
+                    }
+                }
+                mChangeAnimationMidPlay: bool = false
+                mTrueConditionClipName: hash = "Attack4_land"
+                mFalseConditionClipName: hash = "A4_Tiamat_Condition_Core"
+            } 
+            
+            "A4_Tiamat_Condition_Core" = ConditionBoolClipData {
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer = OneTrueMaterialDriver {
+                        mDrivers: list[pointer] = {
+                            IsAnimationPlayingDynamicMaterialBoolDriver {
+                                mAnimationNames: list[hash] = {
+                                    "Spell5_logic_NH"
+                                }
+                            }
+                            IsAnimationPlayingDynamicMaterialBoolDriver {
+                                mAnimationNames: list[hash] = {
+                                    "Spell5_logic"
+                                }
+                            }
+                        }
+                    }
+                }
+                mChangeAnimationMidPlay: bool = false
+                mTrueConditionClipName: hash = "Attack4_DuringJump"
+                mFalseConditionClipName: hash = "A4_Emp"
+            }
+            "Attack4_DuringJump" = ConditionBoolClipData {
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer = AllTrueMaterialDriver {
+                        mDrivers: list[pointer] = {
+                            IsAnimationPlayingDynamicMaterialBoolDriver {
+                                mAnimationNames: list[hash] = {
+                                    "Spell5_logic"
+                                }
+                            }
+                            
+                            FloatComparisonMaterialDriver {
+                                mOperator: u32 = 2
+                                mValueA: pointer = FloatLiteralMaterialDriver {
+                                    mValue: f32 = 0.17
+                                }
+                                mValueB: pointer = AnimationFractionDynamicMaterialFloatDriver {
+                                    mAnimationName: hash = "spell5_logic"
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+                mChangeAnimationMidPlay: bool = false
+                mFalseConditionClipName: hash = "A4_Emp"
+                mTrueConditionClipName: hash = "A4_Jump_Core"
+            }
+            #----- Normal Q 
+            "Attack4_land" = ConditionBoolClipData {
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer = AllTrueMaterialDriver {
+                        mDrivers: list[pointer] = {
+                            IsAttackingBoolDriver {}
+                            HasBuffDynamicMaterialBoolDriver {
+                                Spell: hash = "Characters/Rengar/Spells/RengarQAbility/RengarQEmp"
+                            }
+                        }
+                    }
+                }
+                mChangeAnimationMidPlay: bool = false
+                mTrueConditionClipName: hash = "A4_Emp"
+                mFalseConditionClipName: hash = "A4_Normal"
+            }
+            "A4_Normal" = AtomicClipData {
+                mTrackDataName: hash = "Actions"
+                mTickDuration: f32 = 0.034
+                mEventDataMap: map[hash,pointer] = {
+                    "Normal" = ParticleEventData {
+                        mEffectKey: hash = "Rengar_Q_Cas"
+                        mStartFrame: f32 = 7
+                        mParticleEventDataPairList: list[embed] = {
+                            ParticleEventDataPair {}
+                        }
+                        mFireIfAnimationEndsEarly: bool = true
+                        mIsLoop: bool = false
+                        mIsKillEvent: bool = false
+                    }
+                    "NQ_SFX" = SoundEventData {
+                        mSoundName: string = "Play_sfx_Leap_RengarQ_Stab"
+                        mIsLoop: bool = false
+                        mStartFrame: f32 = 4
+                        mFireIfAnimationEndsEarly: bool = true
+                        mIsKillEvent:bool = false
+                        mSkipIfPastEndFrame: bool = false
+                    }
+                    "StopLeapLogic" = StopAnimationEventData {
+                        mStopAnimationName: hash = "spell5_logic_AbsoluteNull"
+                    }
+                }
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4_long.anm"
+                }
+                mUpdaterResourceData: pointer = UpdaterResourceData {
+                    mUpdaterDataList: list[embed] = {
+                        UpdaterData {
+                            Input: pointer = AttackSpeedParametricUpdater { }
+                            mOutputType: u32 = 1
+                            mValueProcessorDataList: list[pointer] = {
+                                LinearTransformProcessorData {
+                                    mMultiplier: f32 = 1
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            "A4_Emp" = AtomicClipData {
+                mTrackDataName: hash = "Actions"
+                mEventDataMap: map[hash,pointer] = {
+                    "Emp" = ParticleEventData {
+                        mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
+                        mStartFrame: f32 = 7
+                        mParticleEventDataPairList: list[embed] = {
+                            ParticleEventDataPair {}
+                        }
+                        mFireIfAnimationEndsEarly: bool = true
+                        mIsLoop: bool = false
+                        mIsKillEvent: bool = false
+                    }
+                    "NQ_SFX" = SoundEventData {
+                        mSoundName: string = "Play_sfx_Leap_RengarQ_Stab"
+                        mIsLoop: bool = false
+                        mStartFrame: f32 = 4
+                        mFireIfAnimationEndsEarly: bool = true
+                        mIsKillEvent:bool = false
+                        mSkipIfPastEndFrame: bool = false
+                    }
+                    "StopLeapLogic" = StopAnimationEventData {
+                        mStopAnimationName: hash = "spell5_logic_AbsoluteNull"
+                    }
+                }
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4_long.anm"
+                }
+            }
+            "A4_Jump_Core" = AtomicClipData {
+                mTrackDataName: hash = "channel"
+                mMaskDataName: hash = "GroundExcluded"
+                mEventDataMap: map[hash,pointer] = {
+                    "Emp" = ParticleEventData {
+                        mEffectKey: hash = "Rengar_Q_Cas_Max_MyWay"
+                        mStartFrame: f32 = 7
+                        mParticleEventDataPairList: list[embed] = {
+                            ParticleEventDataPair {}
+                        }
+                        mFireIfAnimationEndsEarly: bool = true
+                        mIsLoop: bool = false
+                        mIsKillEvent: bool = false
+                    }
+                    "NQ_SFX" = SoundEventData {
+                        mSoundName: string = "Play_sfx_Leap_RengarQ_Stab"
+                        mIsLoop: bool = false
+                        mStartFrame: f32 = 4
+                        mFireIfAnimationEndsEarly: bool = true
+                        mIsKillEvent:bool = false
+                        mSkipIfPastEndFrame: bool = false
+                    }
+                }
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_Jump3.anm"
+                }
+                mUpdaterResourceData: pointer = UpdaterResourceData {
+                    mUpdaterDataList: list[embed] = {
+                        UpdaterData {
+                            Input: pointer = AttackSpeedParametricUpdater { }
+                            mOutputType: u32 = 1
+                            mValueProcessorDataList: list[pointer] = {
+                                LinearTransformProcessorData {
+                                    mMultiplier: f32 = 0
+                                    mIncrement: f32 = 1.2
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            "A4_Run_Jump_NH" = ConditionBoolClipData {
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer =  FixedDurationTriggeredBoolDriver {
+                        mCustomDuration: f32 = 0.5
+                        mBoolDriver: pointer = IsCastingBoolDriver {
+                            SpellSlot: u32 = 7
+                       }
+                    }
+                }
+                mChangeAnimationMidPlay: bool = true
+                mPlayAnimChangeFromBeginning: bool = true
+                DontStompTransitionClip: bool = true
+                mTrueConditionClipName: hash = "ChannelBelow_Level_A4_NH_ForTiamat"
+                mFalseConditionClipName: hash = "spell5_logic_AbsoluteNull"
+            }
+            
+            
+            "A4_Run_Jump" = ConditionBoolClipData {
+                Updater: pointer = LogicDriverBoolParametricUpdater {
+                    driver: pointer =  FixedDurationTriggeredBoolDriver {
+                        mCustomDuration: f32 = 0.5
+                        mBoolDriver: pointer = IsCastingBoolDriver {
+                            SpellSlot: u32 = 7
+                       }
+                    }
+                }
+                mChangeAnimationMidPlay: bool = true
+                mPlayAnimChangeFromBeginning: bool = true
+                DontStompTransitionClip: bool = true
+                mTrueConditionClipName: hash = "ChannelBelow_Level_A4_Jump_ForTiamat"
+                mFalseConditionClipName: hash = "spell5_logic_AbsoluteNull"
+            }
+            "ChannelBelow_Level_A4_Jump_ForTiamat" = AtomicClipData {
+                mTrackDataName: hash = "channel_below"
+                mMaskDataName: hash = "UpperBody"
+
+
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_Jump3.anm"
+                }
+                mUpdaterResourceData: pointer = UpdaterResourceData {
+                    mUpdaterDataList: list[embed] = {
+                        UpdaterData {
+                            Input: pointer = AttackSpeedParametricUpdater { }
+                            mOutputType: u32 = 1
+                            mValueProcessorDataList: list[pointer] = {
+                                LinearTransformProcessorData {
+                                    mMultiplier: f32 = 0
+                                    mIncrement: f32 = 1.2
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            "ChannelBelow_Level_A4_NH_ForTiamat" = AtomicClipData {
+                mTrackDataName: hash = "channel_below"
+                mMaskDataName: hash = "UpperBody"
+
+
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/rengar_attack4_Jump3.anm"
+                }
+                mUpdaterResourceData: pointer = UpdaterResourceData {
+                    mUpdaterDataList: list[embed] = {
+                        UpdaterData {
+                            Input: pointer = AttackSpeedParametricUpdater { }
+                            mOutputType: u32 = 1
+                            mValueProcessorDataList: list[pointer] = {
+                                LinearTransformProcessorData {
+                                    mMultiplier: f32 = 0
+                                    mIncrement: f32 = 1.2
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            "Default_Level_A4_ForTiamat" = AtomicClipData {
+                mTrackDataName: hash = "Default"
+                
+                mTickDuration: f32 = 0.034
+
+                mAnimationResourceData: embed = AnimationResourceData {
+                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4_long.anm"
+                }
+                mUpdaterResourceData: pointer = UpdaterResourceData {
+                    mUpdaterDataList: list[embed] = {
+                        UpdaterData {
+                            Input: pointer = AttackSpeedParametricUpdater { }
+                            mOutputType: u32 = 1
+                            mValueProcessorDataList: list[pointer] = {
+                                LinearTransformProcessorData {
+                                    mMultiplier: f32 = 1
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
             "Taunt_Base" = AtomicClipData {
                 mFlags: u32 = 1
                 mTrackDataName: hash = "Default"
@@ -205,7 +661,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Attack1" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Actions"
                 mEventDataMap: map[hash,pointer] = {
                     0xb5b7e047 = ParticleEventData {
                         mName: hash = 0xb5b7e047
@@ -217,13 +673,14 @@ entries: map[hash,embed] = {
                         mIsLoop: bool = false
                         mIsKillEvent: bool = false
                     }
+                    
                 }
                 mAnimationResourceData: embed = AnimationResourceData {
                     mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack1.anm"
                 }
             }
             "Attack2" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Actions"
                 mEventDataMap: map[hash,pointer] = {
                     0xb6b7e1da = ParticleEventData {
                         mName: hash = 0xb6b7e1da
@@ -241,7 +698,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Attack3" = AtomicClipData {
-                mTrackDataName: hash = "Default"
+                mTrackDataName: hash = "Actions"
                 mEventDataMap: map[hash,pointer] = {
                     0xb7b7e36d = ParticleEventData {
                         mName: hash = 0xb7b7e36d
@@ -472,12 +929,6 @@ entries: map[hash,embed] = {
                     "Hood_Loop"
                 }
             }
-            "Spell2_Idle" = AtomicClipData {
-                mTrackDataName: hash = "Default"
-                mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2.anm"
-                }
-            }
             0x713ed5b5 = AtomicClipData {
                 mTrackDataName: hash = "Default"
                 mEventDataMap: map[hash,pointer] = {
@@ -512,28 +963,6 @@ entries: map[hash,embed] = {
                 mClipNameList: list[hash] = {
                     0x747ae0f5
                     0x76bbc6a0
-                }
-            }
-            "Attack4" = AtomicClipData {
-                mTrackDataName: hash = "Default"
-                mEventDataMap: map[hash,pointer] = {
-                    0xb0b7d868 = ParticleEventData {
-                        mEffectKey: hash = "Rengar_Q_Cas"
-                        mParticleEventDataPairList: list[embed] = {
-                            ParticleEventDataPair {}
-                        }
-                        mIsLoop: bool = false
-                        mIsKillEvent: bool = false
-                    }
-                }
-                mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_attack4.anm"
-                }
-            }
-            "Spell2_Run" = AtomicClipData {
-                mTrackDataName: hash = "Default"
-                mAnimationResourceData: embed = AnimationResourceData {
-                    mAnimationFilePath: string = "ASSETS/Characters/Rengar/Skins/Base/Animations/Rengar_spell2_run.anm"
                 }
             }
             "Spell1_Run_TRA" = AtomicClipData {
@@ -982,21 +1411,544 @@ entries: map[hash,embed] = {
                     0
                 }
             }
+            "GroundExcluded" = MaskData {
+                mWeightList: list[f32] = {
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    0
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                }
+            }
+            "UpperBody_ForDash" = MaskData {
+                mWeightList: list[f32] = {
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    1
+                    1
+                    1
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    1
+                    1 # Ground
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                }
+            }
+            "UpperBody" = MaskData {
+                mWeightList: list[f32] = {
+                    0.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    1.000000
+                    1.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    0.000000
+                    1.000000
+                    1.000000
+                    1.000000
+                    0.000000
+                    1.000000
+                    1.000000
+                    0.000000
+
+                }
+            }
+            "Legs" = MaskData {
+                mWeightList: list[f32] = {
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    0 # Weapon
+                    0
+                    0
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    0
+                    1
+                    1
+                    1
+                    1
+                    1
+                    0
+                    1
+                    1
+                    0
+                }
+            }
+            "RootExcludedMask" = MaskData {
+                mWeightList: list[f32] = {
+                    0
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                }
+            }
+            "W_Exp" = MaskData {
+                mWeightList: list[f32] = {
+                    0
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    1
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    1
+                    1
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    0
+                    1
+                    0
+                    0
+                    1
+                    1
+                    1
+                    0
+                    1
+                    1
+                    0
+                }
+            }
+         
         }
         mTrackDataMap: map[hash,embed] = {
-            "Channel" = TrackData {}
-            "Recall" = TrackData {
-                mPriority: u8 = 1
-            }
             "Hood" = TrackData {
-                mPriority: u8 = 2
+                mPriority: u8 = 5
             }
             "Tassel" = TrackData {
-                mPriority: u8 = 3
+                mPriority: u8 = 5
+            }
+            "Channel" = TrackData {
+                mPriority: u8 = 0
+            }
+            "Channel_below" = TrackData {
+                mPriority: u8 = 1
             }
             "Default" = TrackData {
+                mPriority: u8 = 5
+            }
+            "Actions" = TrackData { 
+                mPriority: u8 = 2
+            }
+            "Spell" = TrackData { 
                 mPriority: u8 = 4
             }
+            "Actions_below" = TrackData { 
+                mPriority: u8 = 3
+            }
+            "nulll" = TrackData { 
+                mPriority: u8 = 6
+            }
+            "AbsNull" = TrackData { 
+                mPriority: u8 = 7
+            }
+            
         }
         mBlendDataTable: map[u64,pointer] = {
             350652854184754509 = TimeBlendData {
