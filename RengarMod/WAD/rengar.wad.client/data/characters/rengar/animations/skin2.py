@@ -750,7 +750,7 @@ entries: map[hash,embed] = {
                 }
             }
             "Recall" = AtomicClipData {
-                mTrackDataName: hash = "Recall"
+                mTrackDataName: hash = "channel"
                 mEventDataMap: map[hash,pointer] = {
                     "Hood" = SubmeshVisibilityEventData {
                         mName: hash = "Hood"
@@ -1919,7 +1919,7 @@ entries: map[hash,embed] = {
         }
         mTrackDataMap: map[hash,embed] = {
             "Hood" = TrackData {
-                mPriority: u8 = 5
+                mPriority: u8 = 0
             }
             "Tassel" = TrackData {
                 mPriority: u8 = 5
