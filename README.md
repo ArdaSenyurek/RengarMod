@@ -1,9 +1,12 @@
 # Season 4 Rengar Mod
 A mod by _Arda Şenyürek_ & _Luka Brkic_ that lets you play Rengar in his **Season 4** form.
 
----
+# Wanna Buy me a Coffee?
 
-## Installation  
+https://buymeacoffee.com/ardasenyurek
+
+
+# Installation  
 
 1. Install **csLol**.  
 2. Add the mod:
